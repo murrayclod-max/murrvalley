@@ -79,7 +79,8 @@ a { color: var(--accent); }
   transition: transform .12s ease, border-color .12s ease;
 }
 .card:hover { transform: translateY(-2px); border-color: var(--accent); }
-.card img { width: 48px; height: 48px; border-radius: 10px; flex: 0 0 48px; object-fit: cover; background: var(--tag-bg); }
+.card img { width: 48px; height: 48px; border-radius: 10px; flex: 0 0 48px; object-fit: contain; background: var(--tag-bg); }
+.card img.wide { background: #fff; padding: 3px; }
 .card .body { min-width: 0; }
 .card .name { font-weight: 650; font-size: 17px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .card .desc { color: var(--muted); font-size: 14.5px; margin: 2px 0 4px; }
