@@ -95,14 +95,15 @@ footer{border-top:1px solid var(--rule);padding:16px 0 40px;font-size:14px;color
 
   <form class="signin" id="signin" hidden>
     <h2>Sign in to ask</h2>
-    <p id="siMsg">Storyteller is free. Give your name and email and we'll send you a sign-in link; you'll stay signed in on this device for 30 days, renewed each visit.</p>
+    <p id="siMsg">Give your name, email and the Storyteller password. You'll stay signed in on this device for 30 days, renewed each visit.</p>
     <div class="grid">
       <input id="siFirst" autocomplete="given-name" placeholder="First name" required maxlength="60" aria-label="First name">
       <input id="siLast" autocomplete="family-name" placeholder="Last name" required maxlength="60" aria-label="Last name">
       <input class="full" id="siEmail" type="email" autocomplete="email" placeholder="Email" required maxlength="254" aria-label="Email">
+      <input class="full" id="siPw" type="password" autocomplete="current-password" placeholder="Password" required maxlength="100" aria-label="Password">
       <input class="hp" id="siHp" tabindex="-1" autocomplete="off" aria-hidden="true">
     </div>
-    <div class="row"><span class="usage" id="siStatus" aria-live="polite"></span><button class="go" id="siGo" type="submit">Email me a sign-in link</button></div>
+    <div class="row"><span class="usage" id="siStatus" aria-live="polite"></span><button class="go" id="siGo" type="submit">Sign in</button></div>
   </form>
 
   <form id="f" autocomplete="off" hidden>
@@ -161,13 +162,15 @@ footer{border-top:1px solid var(--rule);padding:16px 0 40px;font-size:14px;color
   $('signin').onsubmit = async (e) => {
     e.preventDefault();
     const first = $('siFirst').value.trim(), last = $('siLast').value.trim(), email = $('siEmail').value.trim();
-    if (!first || !last || !email) { $('siStatus').textContent = 'First name, last name and email, please.'; return; }
-    $('siGo').disabled = true; $('siStatus').textContent = 'Sending…';
+    const password = $('siPw').value;
+    if (!first || !last || !email || !password) { $('siStatus').textContent = 'First name, last name, email and the password, please.'; return; }
+    $('siGo').disabled = true; $('siStatus').textContent = 'Signing in…';
     try {
-      const r = await fetch(HUB + '/api/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ site: 'storyteller', first, last, email, hp: $('siHp').value, next: '/storyteller/' }) });
+      const r = await fetch(API + '/api/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ first, last, email, password, hp: $('siHp').value }) });
       const j = await r.json().catch(() => ({}));
-      $('siStatus').textContent = j.ok ? `Check ${email} for a sign-in link (it works once, for 30 minutes).` : (j.error || 'Could not send the email. Try again shortly.');
-    } catch { $('siStatus').textContent = 'Could not reach the sign-in service. Try again shortly.'; }
+      if (j.ok && j.token) { token = j.token; store.set(token); $('siPw').value = ''; $('siStatus').textContent = ''; usage.first = true; await usage(); }
+      else $('siStatus').textContent = j.error || 'Sign-in failed. Try again.';
+    } catch { $('siStatus').textContent = 'Could not reach Storyteller. Try again shortly.'; }
     $('siGo').disabled = false;
   };
 
