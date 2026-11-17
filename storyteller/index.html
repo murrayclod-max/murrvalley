@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mill Valley Storyteller</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Ask about Mill Valley history: the 2AM Club, baseball, the tennis club and Marin golf. Short stories with sources.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f4eee2;--paper-2:#ebe3d3;--ink:#221e19;--ink-2:#564e43;--ink-3:#7a7063;--gold:#a8814a;--gold-ink:#8a6a3b;--green:#4f6b47;
+  --rule:rgba(34,30,25,.14);--mount:#fbf8f1;--err:#9b3d22;--shadow:0 1px 2px rgba(30,24,16,.10),0 10px 30px -10px rgba(30,24,16,.32);
+  --display:"Cormorant Garamond",Georgia,serif;--body:"EB Garamond",Georgia,serif;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#191714;--paper-2:#221f1b;--ink:#ece4d4;--ink-2:#c2b8a7;--ink-3:#9a9080;--gold:#c29d63;--gold-ink:#d2ad72;--green:#8fae84;--rule:rgba(236,228,212,.14);--mount:#2a2622;--err:#e2a07a;--shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px -10px rgba(0,0,0,.7);color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#191714;--paper-2:#221f1b;--ink:#ece4d4;--ink-2:#c2b8a7;--ink-3:#9a9080;--gold:#c29d63;--gold-ink:#d2ad72;--green:#8fae84;--rule:rgba(236,228,212,.14);--mount:#2a2622;--err:#e2a07a;--shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px -10px rgba(0,0,0,.7);color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:19px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration-color:var(--gold);text-underline-offset:3px}
+button,textarea{font:inherit;color:inherit}
+.wrap{max-width:780px;margin:0 auto;padding:0 16px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--rule)}
+.top a.brand{font-family:var(--display);font-size:22px;font-weight:600;text-decoration:none}
+.top .links{font-size:15px;color:var(--ink-3)}
+header.hero{padding:42px 0 10px}
+.kicker{color:var(--gold-ink);letter-spacing:.26em;font-size:13px;text-transform:uppercase}
+h1{font-family:var(--display);font-weight:500;font-size:clamp(40px,8vw,60px);line-height:1.02;margin:8px 0 12px}
+.lede{color:var(--ink-2);margin:0 0 22px;max-width:640px}
+form{background:var(--mount);border:1px solid var(--rule);border-radius:12px;padding:16px;box-shadow:var(--shadow)}
+label.q{display:block;font-family:var(--display);font-size:24px;font-weight:500;margin-bottom:6px}
+textarea{width:100%;min-height:92px;resize:vertical;padding:12px 13px;border-radius:8px;border:1px solid var(--rule);background:var(--paper);font-size:19px;line-height:1.5}
+textarea:focus{outline:2px solid var(--gold);outline-offset:1px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:10px}
+.go{padding:10px 20px;border-radius:8px;border:0;background:var(--gold);color:#1c1a17;font-size:18px;cursor:pointer}
+.go[disabled]{opacity:.55;cursor:default}
+.usage{font-size:15px;color:var(--ink-3)}
+.ex{margin:14px 0 0;display:flex;flex-direction:column;gap:6px}
+.ex span{font-size:14px;color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase}
+.chip{text-align:left;background:none;border:1px solid var(--rule);border-radius:8px;padding:7px 11px;font-size:17px;color:var(--ink-2);cursor:pointer;line-height:1.35}
+.chip:hover{border-color:var(--gold);color:var(--ink)}
+.status{margin:18px 0 0;color:var(--ink-2);font-style:italic;min-height:1.6em}
+.status.err{color:var(--err);font-style:normal}
+article.story{margin:26px 0 0}
+article.story h2.t{font-family:var(--display);font-weight:500;font-size:clamp(30px,6vw,40px);line-height:1.1;margin:0 0 12px}
+article.story h3{font-family:var(--display);font-weight:600;font-size:25px;margin:26px 0 6px}
+article.story p{margin:0 0 14px}
+article.story ul{margin:0 0 14px;padding-left:22px}
+article.story li{margin:0 0 6px}
+sup.c{font-size:13px;line-height:0;margin-left:1px;white-space:nowrap}
+sup.c a{color:var(--gold-ink);text-decoration:none;font-weight:500}
+sup.c a:hover{text-decoration:underline}
+.tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:18px 0 0;padding-top:12px;border-top:1px solid var(--rule)}
+.tools button{background:none;border:1px solid var(--rule);border-radius:8px;padding:6px 12px;font-size:16px;cursor:pointer}
+.tools button:hover{border-color:var(--gold)}
+.tools .meta{font-size:14px;color:var(--ink-3)}
+.verify{margin:18px 0 0;padding:12px 14px;border-left:3px solid var(--gold);background:var(--paper-2);font-size:16px;color:var(--ink-2);border-radius:0 8px 8px 0}
+section.sources{margin:26px 0 40px}
+section.sources h3{font-family:var(--display);font-weight:500;font-size:28px;margin:0 0 8px}
+ol.src{padding-left:0;list-style:none;margin:0}
+ol.src li{padding:10px 0;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:2.2em 1fr;gap:4px}
+ol.src li:target{background:var(--paper-2)}
+ol.src .n{font-weight:500;color:var(--gold-ink)}
+ol.src .tt{font-size:17px}
+ol.src .m{font-size:14px;color:var(--ink-3)}
+ol.src .orig{font-size:15px;color:var(--ink-2);margin-top:3px}
+ol.src .orig a{word-break:break-word}
+ol.src .q{font-size:15px;color:var(--ink-3);font-style:italic;margin-top:3px}
+details.more{margin-top:10px;font-size:16px;color:var(--ink-3)}
+footer{border-top:1px solid var(--rule);padding:16px 0 40px;font-size:14px;color:var(--ink-3)}
+.signin{background:var(--mount);border:1px solid var(--rule);border-radius:12px;padding:18px 16px;box-shadow:var(--shadow)}
+.signin h2{font-family:var(--display);font-weight:500;font-size:28px;margin:0 0 6px}
+.signin p{margin:0 0 12px;color:var(--ink-2);font-size:17px}
+.signin .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.signin input{width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--rule);background:var(--paper);font:inherit;font-size:18px;color:var(--ink)}
+.signin input:focus{outline:2px solid var(--gold);outline-offset:1px}
+.signin .full{grid-column:1/-1}
+.signin .hp{position:absolute;left:-5000px}
+.cols{display:flex;flex-wrap:wrap;gap:6px 14px;margin:0 0 20px;font-size:15px;color:var(--ink-3)}
+.cols a{color:var(--ink-2)}
+@media (max-width:560px){.signin .grid{grid-template-columns:1fr}}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a class="brand" href="/">MurrValley</a><span class="links"><a href="/sites/">Sites</a><span id="who"></span></span></div>
+  <header class="hero">
+    <div class="kicker">Mill Valley history · Research desk</div>
+    <h1>Mill Valley Storyteller</h1>
+    <p class="lede">Ask a question about Mill Valley history, or ask for a story. Storyteller reads four collections (the 2AM Club, Mill Valley baseball, the Mill Valley Tennis Club and Marin golf) with their published histories, the sources behind their footnotes and thousands of digitized local newspaper articles, then writes a short account with numbered citations: a starting point for your own research.</p>
+    <div class="cols"><a href="https://2am.murrvalley.com" target="_blank" rel="noopener">The 2AM Club</a><a href="https://baseball.murrvalley.com" target="_blank" rel="noopener">Mill Valley Baseball</a><a href="https://tennis.murrvalley.com" target="_blank" rel="noopener">Mill Valley Tennis Club</a><a href="https://maringolf.org" target="_blank" rel="noopener">MarinGolf.org</a></div>
+  </header>
+
+  <form class="signin" id="signin" hidden>
+    <h2>Sign in to ask</h2>
+    <p id="siMsg">Storyteller is free. Give your name and email and we'll send you a sign-in link; you'll stay signed in on this device for 30 days, renewed each visit.</p>
+    <div class="grid">
+      <input id="siFirst" autocomplete="given-name" placeholder="First name" required maxlength="60" aria-label="First name">
+      <input id="siLast" autocomplete="family-name" placeholder="Last name" required maxlength="60" aria-label="Last name">
+      <input class="full" id="siEmail" type="email" autocomplete="email" placeholder="Email" required maxlength="254" aria-label="Email">
+      <input class="hp" id="siHp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    </div>
+    <div class="row"><span class="usage" id="siStatus" aria-live="polite"></span><button class="go" id="siGo" type="submit">Email me a sign-in link</button></div>
+  </form>
+
+  <form id="f" autocomplete="off" hidden>
+    <label class="q" for="q">What would you like to know?</label>
+    <textarea id="q" name="q" maxlength="600" placeholder="e.g. How did the Brown Jug become the 2 A.M. Club?" required></textarea>
+    <div class="row">
+      <span class="usage" id="usage" aria-live="polite"></span>
+      <button class="go" id="go" type="submit">Tell the story</button>
+    </div>
+    <div class="ex"><span>Try one</span>
+      <button type="button" class="chip">How did the Brown Jug become the 2 A.M. Club, and who ran it?</button>
+      <button type="button" class="chip">Tell me about the 2019 Mill Valley 11s all-star run.</button>
+      <button type="button" class="chip">How did the Mill Valley Tennis Club get started?</button>
+      <button type="button" class="chip">What happened to the old Mill Valley golf course?</button>
+      <button type="button" class="chip">Which Mill Valley ballplayers made it to the major leagues?</button>
+    </div>
+  </form>
+
+  <p class="status" id="status" role="status" aria-live="polite"></p>
+
+  <div id="out" hidden>
+    <article class="story" id="story"></article>
+    <div class="tools">
+      <button type="button" id="copy">Copy story and citations</button>
+      <span class="meta" id="meta"></span>
+    </div>
+    <p class="verify"><b>Verify before you publish.</b> Storyteller writes only from the passages listed below, but it can still misread or over-compress them. Check each fact against the original source (the newspaper, record or page cited) before you quote or publish it.</p>
+    <section class="sources" id="sourcesSec">
+      <h3>Sources used</h3>
+      <ol class="src" id="sources"></ol>
+      <details class="more" id="moreWrap" hidden><summary>Also read, but not cited (<span id="moreN">0</span>)</summary><ol class="src" id="more"></ol></details>
+    </section>
+  </div>
+
+  <footer>Storyteller draws on the published histories at 2am.murrvalley.com, baseball.murrvalley.com, tennis.murrvalley.com and maringolf.org (eleven clubs; the password-protected Meadow Club section is not included), short excerpts of the sources behind their footnotes, digitized local newspapers from the California Digital Newspaper Collection, and the golf researchers' digests. Subscription newspaper items appear as summaries and citations only. Five stories a day per visitor. <a href="/sites/">More MurrValley sites</a> · <a href="#" id="signout" hidden>Sign out</a></footer>
+</div>
+
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const safeUrl = (u) => (/^https?:\/\//i.test(u || '') ? u : null);
+  let state = null;
+  const API = 'https://mv-storyteller.dbmjr.workers.dev';
+  const HUB = 'https://murrvalley-hub.dbmjr.workers.dev';
+  const store = { get() { try { return localStorage.getItem('mvst') || ''; } catch { return ''; } }, set(v) { try { v ? localStorage.setItem('mvst', v) : localStorage.removeItem('mvst'); } catch { /* private window */ } } };
+  let token = store.get();
+  // the email link lands here with #s=<session> (or #e=expired)
+  { const h = new URLSearchParams(location.hash.slice(1));
+    if (h.get('s')) { token = h.get('s'); store.set(token); }
+    if (h.get('e')) $('siMsg').textContent = 'That sign-in link has expired or was already used. Request a new one below.';
+    if (location.hash) history.replaceState(null, '', location.pathname); }
+  const auth = () => (token ? { Authorization: 'Bearer ' + token } : {});
+  function signedOut(msg) { token = ''; store.set(''); $('f').hidden = true; $('signin').hidden = false; $('who').textContent = ''; $('signout').hidden = true; if (msg) $('siMsg').textContent = msg; }
+  $('signout').onclick = (e) => { e.preventDefault(); signedOut('You are signed out.'); };
+  $('signin').onsubmit = async (e) => {
+    e.preventDefault();
+    const first = $('siFirst').value.trim(), last = $('siLast').value.trim(), email = $('siEmail').value.trim();
+    if (!first || !last || !email) { $('siStatus').textContent = 'First name, last name and email, please.'; return; }
+    $('siGo').disabled = true; $('siStatus').textContent = 'Sending…';
+    try {
+      const r = await fetch(HUB + '/api/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ site: 'storyteller', first, last, email, hp: $('siHp').value, next: '/storyteller/' }) });
+      const j = await r.json().catch(() => ({}));
+      $('siStatus').textContent = j.ok ? `Check ${email} for a sign-in link (it works once, for 30 minutes).` : (j.error || 'Could not send the email. Try again shortly.');
+    } catch { $('siStatus').textContent = 'Could not reach the sign-in service. Try again shortly.'; }
+    $('siGo').disabled = false;
+  };
+
+  for (const b of document.querySelectorAll('.chip')) b.onclick = () => { $('q').value = b.textContent; $('q').focus(); };
+
+  async function usage() {
+    try {
+      if (!token) { signedOut(); return; }
+      const r = await fetch(API + '/api/me' + (usage.first ? '' : '?visit=1'), { cache: 'no-store', headers: auth() });
+      usage.first = true;
+      if (r.status === 401) { signedOut('Your session has ended. Sign in again to keep asking.'); return; }
+      const j = await r.json();
+      if (j.token) { token = j.token; store.set(token); }
+      $('signin').hidden = true; $('f').hidden = false; $('signout').hidden = false;
+      $('who').textContent = j.first ? ` · ${j.first}` : '';
+      if (j.resting) { $('usage').textContent = j.restingMessage; $('go').disabled = true; return; }
+      $('usage').textContent = j.admin ? `Admin · ${j.modelName}` : `${j.used} of ${j.daily} stories today`;
+      $('go').disabled = !j.admin && j.used >= j.daily;
+      return;
+      $('go').disabled = !j.admin && j.used >= j.daily;
+    } catch { /* leave as is */ }
+  }
+  usage();
+
+  // ---- rendering ----
+  function displayNums() {
+    const order = new Map();
+    for (const seg of state.segs) for (const n of seg.cites) if (!order.has(n)) order.set(n, order.size + 1);
+    return order;
+  }
+  function inline(s) {
+    return s.replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>').replace(/(^|[\s(])\*([^*\n]+)\*/g, '$1<i>$2</i>');
+  }
+  function storyMarkup(withHtml) {
+    const order = displayNums();
+    let txt = '';
+    for (const seg of state.segs) {
+      const nums = [...new Set(seg.cites.map((n) => order.get(n)))].sort((a, b) => a - b);
+      if (!nums.length) { txt += seg.text; continue; }
+      const m = seg.text.match(/^([\s\S]*?)(\s*)$/);
+      txt += m[1] + `⟦${nums.join(',')}⟧` + m[2];
+    }
+    if (!withHtml) return txt.replace(/⟦([\d,]+)⟧/g, (_, ns) => ns.split(',').map((n) => `[${n}]`).join(''));
+    const lines = esc(txt).split('\n');
+    let out = '', para = [], list = [];
+    const flushP = () => { if (para.length) { out += `<p>${inline(para.join(' '))}</p>`; para = []; } };
+    const flushL = () => { if (list.length) { out += `<ul>${list.map((l) => `<li>${inline(l)}</li>`).join('')}</ul>`; list = []; } };
+    for (const raw of lines) {
+      const l = raw.trim();
+      if (!l) { flushP(); flushL(); continue; }
+      let m;
+      if ((m = l.match(/^#\s+(.*)/))) { flushP(); flushL(); out += `<h2 class="t">${inline(m[1])}</h2>`; continue; }
+      if ((m = l.match(/^#{2,4}\s+(.*)/))) { flushP(); flushL(); out += `<h3>${inline(m[1])}</h3>`; continue; }
+      if ((m = l.match(/^[-*•]\s+(.*)/))) { flushP(); list.push(m[1]); continue; }
+      flushL(); para.push(l);
+    }
+    flushP(); flushL();
+    return out.replace(/⟦([\d,]+)⟧/g, (_, ns) => `<sup class="c">${ns.split(',').map((n) => `<a href="#src-${n}" title="Source ${n}">[${n}]</a>`).join('')}</sup>`);
+  }
+  function sourceItem(s, dn, quotes) {
+    const refs = (s.refs || []).filter((r) => r.label || r.url).slice(0, 6);
+    const origs = refs.map((r) => { const u = safeUrl(r.url); return u ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(r.label || u)}</a>` : esc(r.label); }).join(' · ');
+    const u = safeUrl(s.url);
+    const q = (quotes || []).slice(0, 2).map((x) => `“${esc(x.length > 220 ? x.slice(0, 220) + '…' : x)}”`).join(' ');
+    return `<li id="src-${dn}"><span class="n">${dn}.</span><div><div class="tt">${u ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(s.title)}</a>` : esc(s.title)}</div>
+      <div class="m">${esc(s.clubName)} · ${esc({ page: 'published page', staff: 'staff roster', digest: 'research digest', excerpt: 'source excerpt', newspaper: 'digitized newspaper' }[s.kind] || s.kind)}${s.vis === 'licensed-summary' ? ' · subscription source (summary only)' : ''}</div>
+      ${origs ? `<div class="orig">Original sources: ${origs}</div>` : ''}${q ? `<div class="q">Cited text: ${q}</div>` : ''}</div></li>`;
+  }
+  function render(final) {
+    $('story').innerHTML = storyMarkup(true);
+    const order = displayNums();
+    const cited = [...order.entries()].sort((a, b) => a[1] - b[1]);
+    $('sources').innerHTML = cited.map(([n, dn]) => sourceItem(state.sources[n - 1], dn, state.quotes.get(n))).join('') || '<li><span></span><div class="m">No passage cited yet.</div></li>';
+    if (final) {
+      const rest = state.sources.filter((s) => !order.has(s.n));
+      $('moreWrap').hidden = !rest.length;
+      $('moreN').textContent = rest.length;
+      $('more').innerHTML = rest.map((s) => sourceItem(s, '·', null).replace(/id="src-·"/, '')).join('');
+    }
+  }
+  function plainText() {
+    const order = displayNums();
+    const cited = [...order.entries()].sort((a, b) => a[1] - b[1]);
+    let t = storyMarkup(false).trim() + '\n\nSources\n';
+    for (const [n, dn] of cited) {
+      const s = state.sources[n - 1];
+      t += `[${dn}] ${s.title}${s.url ? ` <${s.url}>` : ''}\n`;
+      for (const r of (s.refs || []).slice(0, 6)) if (r.label || r.url) t += `     ${r.label || ''}${r.url ? ` <${r.url}>` : ''}\n`;
+    }
+    return t + '\nWritten by the Mill Valley Storyteller (murrvalley.com/storyteller) from the sources above. Verify each fact against the original source before publishing.\n';
+  }
+  $('copy').onclick = async () => {
+    try { await navigator.clipboard.writeText(plainText()); $('copy').textContent = 'Copied'; }
+    catch { $('copy').textContent = 'Copy failed'; }
+    setTimeout(() => { $('copy').textContent = 'Copy story and citations'; }, 1800);
+  };
+
+  // ---- asking ----
+  $('f').onsubmit = async (e) => {
+    e.preventDefault();
+    const q = $('q').value.trim();
+    if (q.length < 8) { setStatus('Ask a question or describe the story you want (a sentence is plenty).', true); return; }
+    $('go').disabled = true;
+    $('out').hidden = true;
+    setStatus('Reading the sources…');
+    state = { segs: [], sources: [], quotes: new Map() };
+    let res;
+    try {
+      res = await fetch(API + '/api/story', { method: 'POST', headers: { 'Content-Type': 'application/json', ...auth() }, body: JSON.stringify({ q }) });
+    } catch { setStatus('Could not reach Storyteller. Check your connection and try again.', true); $('go').disabled = false; return; }
+    if (!res.ok || !(res.headers.get('Content-Type') || '').includes('event-stream')) {
+      let msg = `Something went wrong (${res.status}).`;
+      try { msg = (await res.json()).error || msg; } catch { /* keep */ }
+      if (res.status === 401) { signedOut('Your session has ended. Sign in again to keep asking.'); $('go').disabled = false; return; }
+      setStatus(msg, true); usage(); return;
+    }
+    const reader = res.body.getReader();
+    const dec = new TextDecoder();
+    let buf = '', pending = false;
+    const schedule = () => { if (!pending) { pending = true; requestAnimationFrame(() => { pending = false; render(false); }); } };
+    for (;;) {
+      const { value, done } = await reader.read();
+      if (done) break;
+      buf += dec.decode(value, { stream: true });
+      let i;
+      while ((i = buf.indexOf('\n\n')) >= 0) {
+        const raw = buf.slice(0, i); buf = buf.slice(i + 2);
+        const ev = (raw.match(/^event: (.*)$/m) || [])[1];
+        const dl = (raw.match(/^data: (.*)$/m) || [])[1];
+        if (!ev || !dl) continue;
+        const d = JSON.parse(dl);
+        if (ev === 'sources') { state.sources = d.sources; setStatus(`Writing from ${d.sources.length} passages with ${d.modelName}…`); $('out').hidden = false; }
+        else if (ev === 'block') state.segs.push({ text: '', cites: [] });
+        else if (ev === 'text') { if (!state.segs.length) state.segs.push({ text: '', cites: [] }); state.segs[state.segs.length - 1].text += d.text; schedule(); }
+        else if (ev === 'cite') {
+          if (!state.segs.length) state.segs.push({ text: '', cites: [] });
+          state.segs[state.segs.length - 1].cites.push(d.n);
+          if (!state.quotes.has(d.n)) state.quotes.set(d.n, []);
+          if (d.quote && state.quotes.get(d.n).length < 2) state.quotes.get(d.n).push(d.quote);
+          schedule();
+        } else if (ev === 'done') {
+          render(true);
+          setStatus('');
+          $('meta').textContent = `${d.modelName} · about $${Number(d.cost).toFixed(3)}`;
+          if (d.used != null) $('usage').textContent = `${d.used} of ${d.daily} stories today`;
+        } else if (ev === 'error') { render(true); setStatus(d.error, true); }
+      }
+    }
+    usage();
+  };
+  function setStatus(t, err) { $('status').textContent = t; $('status').classList.toggle('err', !!err); }
+})();
+</script>
+</body>
+</html>
