@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Mill Valley Storyteller</title>
 <meta name="robots" content="noindex,nofollow">
-<meta name="description" content="Ask about Mill Valley history: the 2AM Club, baseball, the tennis club and Marin golf. Short stories with sources.">
+<meta name="description" content="Cited stories of Mill Valley history: the Mill Valley Tennis Club, the 2AM Club and Mill Valley baseball.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -36,6 +36,13 @@ textarea:focus{outline:2px solid var(--gold);outline-offset:1px}
 .go{padding:10px 20px;border-radius:8px;border:0;background:var(--gold);color:#1c1a17;font-size:18px;cursor:pointer}
 .go[disabled]{opacity:.55;cursor:default}
 .usage{font-size:15px;color:var(--ink-3)}
+.cost{margin:0 0 16px;padding:11px 15px;background:var(--paper-2);border:1px solid var(--rule);border-left:3px solid var(--gold);border-radius:10px;font-size:16px;line-height:1.55;color:var(--ink-2)}.cost b{color:var(--ink);font-weight:500}
+.btns{display:flex;gap:8px;flex-wrap:wrap}.go.deep{background:var(--ink);color:var(--paper)}.go:disabled{opacity:.45;cursor:default}
+.morebar{margin-top:8px;font-size:15px;color:var(--ink-3)}.morebtn{background:none;border:1px solid var(--rule);border-radius:8px;padding:5px 11px;font-size:15px;color:var(--ink-2);cursor:pointer}
+.morebtn.hot{background:var(--gold);color:#1c1a17;border-color:var(--gold);font-size:17px;padding:8px 14px}
+dialog.mr{max-width:min(460px,calc(100vw - 32px));width:100%;border:1px solid var(--rule);border-radius:10px;background:var(--mount);color:var(--ink);padding:20px}
+dialog.mr::backdrop{background:rgba(20,18,16,.55)}dialog.mr label{display:block;font-size:16px;margin:10px 0 4px}dialog.mr input,dialog.mr textarea{width:100%;box-sizing:border-box;padding:8px 10px;border:1px solid var(--rule);border-radius:6px;background:var(--paper);color:var(--ink);font:inherit;font-size:17px}
+dialog.mr .two{display:flex;gap:12px}dialog.mr .two>div{flex:1}dialog.mr .bt{display:flex;gap:10px;justify-content:flex-end;margin-top:14px}
 .ex{margin:14px 0 0;display:flex;flex-direction:column;gap:6px}
 .ex span{font-size:14px;color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase}
 .chip{text-align:left;background:none;border:1px solid var(--rule);border-radius:8px;padding:7px 11px;font-size:17px;color:var(--ink-2);cursor:pointer;line-height:1.35}
@@ -68,78 +75,274 @@ ol.src .orig{font-size:15px;color:var(--ink-2);margin-top:3px}
 ol.src .orig a{word-break:break-word}
 ol.src .q{font-size:15px;color:var(--ink-3);font-style:italic;margin-top:3px}
 details.more{margin-top:10px;font-size:16px;color:var(--ink-3)}
+section.rmap{margin:6px 0 40px;padding-top:18px;border-top:1px solid var(--rule)}
+section.rmap h3{font-family:var(--display);font-weight:500;font-size:28px;margin:0 0 4px}
+section.rmap h4{font-family:var(--display);font-weight:600;font-size:21px;margin:20px 0 4px}
+.rm-lede{font-size:15px;color:var(--ink-3);margin:0 0 10px}
+.rm-g{padding:10px 0;border-top:1px solid var(--rule)}
+.rm-gh{display:flex;flex-wrap:wrap;gap:2px 10px;align-items:baseline}
+.rm-gh b{font-weight:500}.rm-links{font-size:15px;color:var(--ink-2)}
+ul.rm-i{list-style:none;padding:0;margin:4px 0 0}ul.rm-i li{padding:4px 0 4px 14px;position:relative;font-size:17px;line-height:1.45}
+ul.rm-i li::before{content:"";position:absolute;left:2px;top:.75em;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.rm-call{font-size:14.5px;color:var(--ink-3)}.rm-why{display:block;font-size:15px;color:var(--ink-2);font-style:italic}
+.rm-kind{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-ink);margin-right:6px}
+.rm-more{margin:14px 0 0;background:none;border:1px solid var(--rule);border-radius:8px;padding:6px 14px;font-size:16px;cursor:pointer}
+.rm-more:hover{border-color:var(--gold)}.rm-more:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.rm-note{font-size:14px;color:var(--ink-3);margin:12px 0 0}
 footer{border-top:1px solid var(--rule);padding:16px 0 40px;font-size:14px;color:var(--ink-3)}
-.signin{background:var(--mount);border:1px solid var(--rule);border-radius:12px;padding:18px 16px;box-shadow:var(--shadow)}
-.signin h2{font-family:var(--display);font-weight:500;font-size:28px;margin:0 0 6px}
-.signin p{margin:0 0 12px;color:var(--ink-2);font-size:17px}
-.signin .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.signin input{width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--rule);background:var(--paper);font:inherit;font-size:18px;color:var(--ink)}
-.signin input:focus{outline:2px solid var(--gold);outline-offset:1px}
-.signin .full{grid-column:1/-1}
-.signin .hp{position:absolute;left:-5000px}
-.cols{display:flex;flex-wrap:wrap;gap:6px 14px;margin:0 0 20px;font-size:15px;color:var(--ink-3)}
-.cols a{color:var(--ink-2)}
-@media (max-width:560px){.signin .grid{grid-template-columns:1fr}}
 .vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* 2026-11-18: first-time primer, tour, (i) explainers, free sample */
+.top .links a{margin-left:2px}.howl{background:none;border:0;padding:0;font:inherit;color:inherit;text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px;cursor:pointer}
+button.info,.tools button.info{display:inline-flex;align-items:center;justify-content:center;width:19px;height:19px;padding:0;margin:0 0 0 6px;border-radius:50%;border:1px solid var(--rule);background:none;color:var(--ink-3);font:italic 600 12.5px/1 Georgia,serif;cursor:pointer;vertical-align:middle;flex:none}
+button.info:hover,button.info[aria-expanded="true"]{border-color:var(--gold);color:var(--gold-ink)}button.info:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.info-tap{position:relative}.info-tap::after{content:"";position:absolute;inset:-12px}
+.qh{display:flex;align-items:center;margin-bottom:6px}.qh label.q{margin:0}
+#pop{position:absolute;z-index:40;width:max-content;max-width:min(320px,calc(100vw - 32px));background:var(--mount);color:var(--ink);border:1px solid var(--rule);border-radius:10px;padding:10px 13px;box-shadow:0 6px 24px rgba(0,0,0,.18);font-size:15.5px;line-height:1.5}
+#pop b{display:block;font-weight:500;margin-bottom:2px}#pop p{margin:0;color:var(--ink-2)}
+dialog.pm{max-width:min(560px,calc(100vw - 32px));width:100%;border:1px solid var(--rule);border-radius:12px;background:var(--mount);color:var(--ink);padding:22px 22px 18px}
+dialog.pm::backdrop{background:rgba(20,18,16,.55)}dialog.pm h2{font-family:var(--display);font-weight:500;font-size:32px;line-height:1.1;margin:0 0 10px}
+dialog.pm p{margin:0 0 10px;font-size:17px;line-height:1.5;color:var(--ink-2)}dialog.pm p b{color:var(--ink);font-weight:500}
+dialog.pm .cost{margin:12px 0}dialog.pm .bt{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;margin-top:14px}
+.ghost{background:none;border:1px solid var(--rule);border-radius:8px;padding:9px 14px;font-size:17px;color:var(--ink-2);cursor:pointer}.ghost:hover{border-color:var(--gold)}
+.empty{margin:14px 0 0;font-size:16px;color:var(--ink-3)}.lnk{background:none;border:0;padding:0;font:inherit;color:var(--ink-2);text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px;cursor:pointer}
+.samplebar{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin:20px 0 0;padding:10px 14px;border:1px dashed var(--gold);border-radius:10px;font-size:15.5px;color:var(--ink-2)}
+.tag{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;background:var(--gold);color:#1c1a17;border-radius:4px;padding:2px 7px}
+.rm-legend{font-size:15px;color:var(--ink-3);margin:2px 0 6px;display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center}.rm-legend span{display:inline-flex;align-items:center}
+#tour{position:fixed;inset:0;z-index:60}#tourHl{position:fixed;border-radius:10px;box-shadow:0 0 0 3px var(--gold),0 0 0 9999px rgba(20,18,16,.58);transition:all .18s ease;pointer-events:none}
+@media (prefers-reduced-motion:reduce){#tourHl{transition:none}}
+.tour-card{position:fixed;left:16px;right:16px;max-width:420px;margin:0 auto;background:var(--mount);color:var(--ink);border:1px solid var(--rule);border-radius:12px;padding:14px 16px;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.tour-card .tn{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-ink);margin:0 0 2px}.tour-card b{display:block;font-family:var(--display);font-weight:500;font-size:24px;line-height:1.15}
+.tour-card p.tb{margin:6px 0 0;font-size:16.5px;line-height:1.5;color:var(--ink-2)}.tour-card .bt{display:flex;gap:8px;justify-content:flex-end;margin-top:12px;flex-wrap:wrap}
+
+#auth .tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:6px 0 14px}#auth .tabs button{padding:10px;border-radius:8px;background:transparent;color:var(--ink);border:1px solid var(--rule);font-size:18px;cursor:pointer}
+#auth .tabs button[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+#auth .af{margin-bottom:12px}#auth .af label{display:block;font-size:16px;margin:10px 0 4px}#auth .af input,#auth .af textarea{width:100%;padding:10px 12px;border-radius:8px;border:1px solid var(--rule);background:var(--paper);color:var(--ink);font:inherit;font-size:18px}
+#auth .af .go{margin-top:14px}#auth .fine{font-size:15.5px;color:var(--ink-3)}#auth .ah{font-family:var(--display);font-weight:500;font-size:30px;margin:0 0 6px}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="top"><a class="brand" href="/">MurrValley</a><span class="links"><a href="/sites/">Sites</a><span id="who"></span></span></div>
+  <div class="top" id="topbar" hidden><a class="brand" href="https://murrvalley.com/histories/">MurrValley.com</a><span class="links"><button type="button" class="howl" id="howLink">How to use Storyteller</button> · <span id="whoLine"></span><button type="button" class="howl" id="signOut">Sign out</button></span></div>
+  <style>
+    #adminCost{max-width:640px;margin:10px auto 0;padding:12px 16px 10px;border:1px solid rgba(127,127,127,.35);border-radius:10px;font:14px/1.4 system-ui,sans-serif;text-align:center}
+    #adminCost .lbl{font-size:12px;letter-spacing:.06em;text-transform:uppercase;opacity:.7}
+    #adminCost .big{font-size:30px;font-weight:600;margin:2px 0}
+    #adminCost .sub{font-size:13px;opacity:.75}
+    #adminCost .per{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:10px}
+    #adminCost .per button{font:13px system-ui,sans-serif;padding:4px 10px;border-radius:999px;border:1px solid rgba(127,127,127,.45);background:transparent;color:inherit;cursor:pointer}
+    #adminCost .per button.on{background:rgba(127,127,127,.28);border-color:currentColor;font-weight:600}
+    #adminCost .cap{font-size:12px;opacity:.65;margin-top:8px}
+  </style>
+  <div id="adminCost" hidden aria-live="polite"></div>
+  <script>
+function stCostChart(host,series,k){
+  if(!host)return;
+  var SP={hour:36e5,day:864e5,week:6048e5,month:2592e6,quarter:7776e6,year:31536e6};
+  var now=Date.now(),pts=(series||[]).map(function(p){return [Date.parse(p[0]),+p[1]]}).filter(function(p){return isFinite(p[0])});
+  var t0=SP[k]?now-SP[k]:(pts.length?Math.min(pts[0][0],now-36e5):now-864e5);
+  var cum=0,ln=[[t0,0]];
+  pts.forEach(function(p){if(p[0]<t0||p[0]>now)return;ln.push([p[0],cum]);cum+=p[1];ln.push([p[0],cum])});
+  ln.push([now,cum]);
+  var W=Math.max(260,host.clientWidth||520),H=180,L=46,R=12,T=12,B=26;
+  var step=[.01,.02,.05,.1,.2,.5,1,2,5,10,20,50,100].find(function(s){return cum*1.1/s<=4})||100,ymax=Math.max(step,Math.ceil(cum*1.1/step)*step);
+  var X=function(t){return L+(t-t0)/(now-t0||1)*(W-L-R)},Y=function(v){return T+(1-v/ymax)*(H-T-B)};
+  var d=ln.map(function(p,i){return (i?'L':'M')+X(p[0]).toFixed(1)+' '+Y(p[1]).toFixed(1)}).join('');
+  var area=d+'L'+X(now).toFixed(1)+' '+Y(0).toFixed(1)+'L'+X(t0).toFixed(1)+' '+Y(0).toFixed(1)+'Z';
+  var short=SP[k]&&SP[k]<=864e5;
+  var fmt=function(t,full){return new Date(t).toLocaleString('en-US',full?{timeZone:'America/Los_Angeles',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'}:short?{timeZone:'America/Los_Angeles',hour:'numeric',minute:'2-digit'}:{timeZone:'America/Los_Angeles',month:'short',day:'numeric',year:(k==='year'||!SP[k])?'2-digit':undefined})};
+  var g='';
+  for(var v=0;v<=ymax+1e-9;v+=step){g+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+Y(v).toFixed(1)+'" y2="'+Y(v).toFixed(1)+'" stroke="currentColor" stroke-opacity="'+(v===0?.35:.12)+'"/><text x="'+(L-6)+'" y="'+(Y(v)+4).toFixed(1)+'" text-anchor="end" font-size="11" fill="currentColor" fill-opacity=".6">$'+(step<1?v.toFixed(2):v.toFixed(0))+'</text>'}
+  g+='<text x="'+L+'" y="'+(H-6)+'" font-size="11" fill="currentColor" fill-opacity=".6">'+fmt(t0,short)+'</text><text x="'+(W-R)+'" y="'+(H-6)+'" text-anchor="end" font-size="11" fill="currentColor" fill-opacity=".6">Now</text>';
+  host.style.position='relative';
+  host.innerHTML='<svg width="'+W+'" height="'+H+'" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Cumulative Storyteller spending, '+fmt(t0)+' to now: $'+cum.toFixed(2)+'" style="display:block;max-width:100%;overflow:visible">'+g+
+    '<path d="'+area+'" fill="currentColor" fill-opacity=".10"/><path d="'+d+'" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>'+
+    '<line class="hx" y1="'+T+'" y2="'+(H-B)+'" stroke="currentColor" stroke-opacity=".45" stroke-dasharray="3 3" style="display:none"/><circle class="hd" r="4.5" fill="currentColor" style="display:none"/>'+
+    '<rect x="'+L+'" y="0" width="'+(W-L-R)+'" height="'+(H-B)+'" fill="transparent" style="cursor:crosshair"/></svg>'+
+    '<div class="htip" style="position:absolute;display:none;pointer-events:none;background:rgba(20,20,20,.9);color:#fff;font:12px/1.35 system-ui,sans-serif;padding:5px 8px;border-radius:6px;white-space:nowrap"></div>';
+  var svg=host.querySelector('svg'),hx=svg.querySelector('.hx'),hd=svg.querySelector('.hd'),tip=host.querySelector('.htip'),hit=svg.querySelector('rect');
+  var at=function(t){var v=0;for(var i=0;i<ln.length;i++){if(ln[i][0]<=t)v=ln[i][1];else break}return v};
+  var move=function(e){var r=svg.getBoundingClientRect(),cx=(e.touches?e.touches[0].clientX:e.clientX)-r.left;cx=Math.max(L,Math.min(W-R,cx));
+    var t=t0+(cx-L)/(W-L-R)*(now-t0),v=at(t);
+    hx.setAttribute('x1',cx);hx.setAttribute('x2',cx);hx.style.display='';hd.setAttribute('cx',cx);hd.setAttribute('cy',Y(v));hd.style.display='';
+    tip.innerHTML='<b>$'+v.toFixed(2)+'</b> spent by '+fmt(t,true);tip.style.display='block';
+    var tw=tip.offsetWidth;tip.style.left=Math.max(0,Math.min(W-tw,cx-tw/2))+'px';tip.style.top=Math.max(0,Y(v)-38)+'px'};
+  var out=function(){hx.style.display='none';hd.style.display='none';tip.style.display='none'};
+  hit.addEventListener('mousemove',move);hit.addEventListener('touchmove',move,{passive:true});hit.addEventListener('mouseleave',out);hit.addEventListener('touchend',out);
+}
+  </script>
+
+  <section id="auth" hidden aria-labelledby="authH">
+    <header class="hero"><div class="kicker">Research desk · By permission</div><h1 id="authH">Mill Valley Storyteller</h1>
+      <p class="lede">Cited stories of the Mill Valley Tennis Club, the 2AM Club and baseball in Mill Valley, written from the three history sites and every source gathered for them. Accounts are individual and approved by the site’s editor.</p></header>
+    <p class="cost"><b>About cost.</b> Storyteller uses Claude, an AI service from Anthropic that charges for every search. The site’s administrator pays those costs, within a monthly limit, so each person has a weekly allowance. Please use your searches wisely: try a Quick search first, and save Deep research for questions that need it.<span class="al" style="display:block;margin-top:4px;color:var(--ink-3);font-size:15px">Weekly allowance: Quick 10 · Deep 5 (Monday to Sunday).</span></p>
+    <p class="status" id="aNote" role="status" aria-live="polite"></p>
+    <div id="aMain">
+      <div class="tabs" role="tablist" aria-label="Sign in or sign up"><button type="button" role="tab" id="tIn" aria-controls="pIn" aria-selected="true">Sign in</button><button type="button" role="tab" id="tUp" aria-controls="pUp" aria-selected="false">Sign up</button></div>
+      <div id="pIn" role="tabpanel" aria-labelledby="tIn">
+        <form id="fIn" class="af"><label for="inE">Email</label><input id="inE" type="email" autocomplete="username" required maxlength="254">
+          <label for="inP">Password</label><input id="inP" type="password" autocomplete="current-password" required maxlength="200">
+          <p class="status err" id="inErr" role="alert" hidden></p><button class="go" type="submit">Sign in</button></form>
+        <p class="fine"><button type="button" class="lnk" id="forgotL">Forgot your password?</button> · No account yet? Choose <b>Sign up</b>.</p>
+        <form id="fForgot" class="af" hidden><p class="fine">Enter your email. If it has a Mill Valley Storyteller account, we will send a link to choose a new password.</p>
+          <label for="fgE">Email</label><input id="fgE" type="email" autocomplete="email" required maxlength="254"><button class="go" type="submit">Send the link</button> <button type="button" class="lnk" id="fgX">Cancel</button></form>
+      </div>
+      <div id="pUp" role="tabpanel" aria-labelledby="tUp" hidden>
+        <p class="fine">Storyteller accounts are individual and approved by Dan Murray, the site’s editor. Fill this in; once you are approved you will get an email with a link to set your password. Your Mill Valley Storyteller account is separate from any MarinGolf.org account: someone who wants both signs up for each.</p>
+        <form id="fUp" class="af"><input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-5000px;width:1px">
+          <label for="uF">First name</label><input id="uF" name="first_name" maxlength="60" autocomplete="given-name" required>
+          <label for="uL">Last name</label><input id="uL" name="last_name" maxlength="60" autocomplete="family-name" required>
+          <label for="uE">Email</label><input id="uE" name="email" type="email" maxlength="254" autocomplete="email" required>
+          <label for="uC">Cell number</label><input id="uC" name="cell" type="tel" maxlength="40" autocomplete="tel" required>
+          <label for="uR">Your connection to Mill Valley history (for example: a tennis club member, a 2AM regular, a Little League parent or player, a researcher), and what you would like to look into</label><textarea id="uR" name="relationship" rows="3" maxlength="1000" required></textarea>
+          <p class="status err" id="upErr" role="alert" hidden></p><button class="go" type="submit">Sign up</button></form>
+      </div>
+    </div>
+    <form id="fSet" class="af" hidden><h2 class="ah" id="setH">Choose your password</h2><p class="fine" id="setP">At least 10 characters.</p>
+      <div id="setCur" hidden><label for="sC">Your temporary password</label><input id="sC" type="password" autocomplete="current-password" maxlength="200"></div>
+      <label for="sP">New password</label><input id="sP" type="password" autocomplete="new-password" minlength="10" maxlength="200" required>
+      <label for="sP2">Type it again</label><input id="sP2" type="password" autocomplete="new-password" minlength="10" maxlength="200" required>
+      <p class="status err" id="setErr" role="alert" hidden></p><button class="go" type="submit">Save password and open Storyteller</button></form>
+    <p class="fine" style="margin-top:22px"><a href="https://murrvalley.com/histories/">MurrValley histories</a> · <a href="https://tennis.murrvalley.com/">Tennis</a> · <a href="https://2am.murrvalley.com/">2AM Club</a> · <a href="https://baseball.murrvalley.com/">Baseball</a> · <a class="mg-admin" href="https://maringolf.org/admin?tenant=murrvalley&amp;site=storyteller" rel="nofollow" style="opacity:.6;font-size:.86em">Admin</a></p>
+  </section>
+  <div id="app" hidden>
   <header class="hero">
-    <div class="kicker">Mill Valley history · Research desk</div>
+    <div class="kicker">Research desk · By permission</div>
     <h1>Mill Valley Storyteller</h1>
-    <p class="lede">Ask a question about Mill Valley history, or ask for a story. Storyteller reads four collections (the 2AM Club, Mill Valley baseball, the Mill Valley Tennis Club and Marin golf) with their published histories, the sources behind their footnotes and thousands of digitized local newspaper articles, then writes a short account with numbered citations: a starting point for your own research.</p>
-    <div class="cols"><a href="https://2am.murrvalley.com" target="_blank" rel="noopener">The 2AM Club</a><a href="https://baseball.murrvalley.com" target="_blank" rel="noopener">Mill Valley Baseball</a><a href="https://tennis.murrvalley.com" target="_blank" rel="noopener">Mill Valley Tennis Club</a><a href="https://maringolf.org" target="_blank" rel="noopener">MarinGolf.org</a></div>
+    <p class="lede">Ask a question about the Mill Valley Tennis Club, the 2AM Club or baseball in Mill Valley, or ask for a story. Storyteller reads the three history sites, the sources behind their footnotes and every newspaper article and record gathered for them, then writes a short account with numbered citations: a starting point for your own research.</p>
   </header>
 
-  <form class="signin" id="signin" hidden>
-    <h2>Sign in to ask</h2>
-    <p id="siMsg">Give your name, email and the Storyteller password. You'll stay signed in on this device for 30 days, renewed each visit.</p>
-    <div class="grid">
-      <input id="siFirst" autocomplete="given-name" placeholder="First name" required maxlength="60" aria-label="First name">
-      <input id="siLast" autocomplete="family-name" placeholder="Last name" required maxlength="60" aria-label="Last name">
-      <input class="full" id="siEmail" type="email" autocomplete="email" placeholder="Email" required maxlength="254" aria-label="Email">
-      <input class="full" id="siPw" type="password" autocomplete="current-password" placeholder="Password" required maxlength="100" aria-label="Password">
-      <input class="hp" id="siHp" tabindex="-1" autocomplete="off" aria-hidden="true">
-    </div>
-    <div class="row"><span class="usage" id="siStatus" aria-live="polite"></span><button class="go" id="siGo" type="submit">Sign in</button></div>
-  </form>
+  <p class="cost"><b>About cost.</b> Storyteller uses Claude, an AI service from Anthropic that charges for every search. The site’s administrator pays those costs, within a monthly limit, so each person has a weekly allowance. Please use your searches wisely: try a Quick search first, and save Deep research for questions that need it.</p>
 
-  <form id="f" autocomplete="off" hidden>
-    <label class="q" for="q">What would you like to know?</label>
-    <textarea id="q" name="q" maxlength="600" placeholder="e.g. How did the Brown Jug become the 2 A.M. Club?" required></textarea>
+  <form id="f" autocomplete="off">
+    <div class="qh"><label class="q" for="q">What would you like to know?</label><button type="button" class="info" data-i="ask" aria-label="About the question box" aria-expanded="false" aria-controls="pop">i</button></div>
+    <textarea id="q" name="q" maxlength="600" placeholder="e.g. When did the 2 A.M. Club get its name, and who ran it?" required></textarea>
     <div class="row">
-      <span class="usage" id="usage" aria-live="polite"></span>
-      <button class="go" id="go" type="submit">Tell the story</button>
+      <span class="usage"><span id="usage" aria-live="polite"></span><button type="button" class="info" data-i="allow" aria-label="About the weekly allowance" aria-expanded="false" aria-controls="pop">i</button></span>
+      <span class="btns" id="go"><button class="go" id="goQ" type="submit" data-mode="quick" title="A concise cited answer with the top research leads (Sonnet)">Quick search</button><button type="button" class="info" data-i="quick" aria-label="About Quick search" aria-expanded="false" aria-controls="pop">i</button><button class="go deep" id="goD" type="submit" data-mode="deep" title="The full story from more sources, with the complete Research Map (Opus)">Deep research</button><button type="button" class="info" data-i="deep" aria-label="About Deep research" aria-expanded="false" aria-controls="pop">i</button></span>
     </div>
     <div class="ex"><span>Try one</span>
-      <button type="button" class="chip">How did the Brown Jug become the 2 A.M. Club, and who ran it?</button>
-      <button type="button" class="chip">Tell me about the 2019 Mill Valley 11s all-star run.</button>
-      <button type="button" class="chip">How did the Mill Valley Tennis Club get started?</button>
-      <button type="button" class="chip">What happened to the old Mill Valley golf course?</button>
-      <button type="button" class="chip">Which Mill Valley ballplayers made it to the major leagues?</button>
+      <button type="button" class="chip">How did the Mill Valley Tennis Club start, and where were its first courts?</button>
+      <button type="button" class="chip">Tell me about the 2 A.M. Club in the Greyerbiehl years.</button>
+      <button type="button" class="chip">What is the history of baseball at Boyle Park?</button>
     </div>
   </form>
 
+  <div class="morebar" id="morebar" hidden><button type="button" class="morebtn" id="moreBtn">Request more searches</button><button type="button" class="info" data-i="more" aria-label="About Request more searches" aria-expanded="false" aria-controls="pop">i</button> <span id="moreNote"></span></div>
+  <dialog class="mr" id="moreDlg" aria-labelledby="mrH"><form id="moreF" method="dialog"><h3 id="mrH" style="margin:0 0 4px">Request more searches</h3>
+    <p class="usage" style="margin:0">For the rest of this week. Dan reviews each request.</p>
+    <div class="two"><div><label for="mrQ">Quick searches</label><input id="mrQ" type="number" min="0" max="50" value="10"></div><div><label for="mrD">Deep research</label><input id="mrD" type="number" min="0" max="25" value="5"></div></div>
+    <label for="mrR">Reason (optional)</label><textarea id="mrR" rows="2" maxlength="1000"></textarea>
+    <p class="status err" id="mrErr" hidden></p>
+    <div class="bt"><button type="button" class="morebtn" id="mrX">Cancel</button><button type="submit" class="go" id="mrGo">Send request</button></div></form></dialog>
+  <p class="empty" id="empty">New here? <button type="button" class="lnk" id="seeSample">See a sample story</button> (free: it does not use one of your searches).</p>
   <p class="status" id="status" role="status" aria-live="polite"></p>
+  <div class="samplebar" id="sampleBar" hidden><span class="tag">Sample</span><span>A saved Deep research story: “<span id="sampleQ"></span>” It is free to read and did not use a search.</span><button type="button" class="lnk" id="sampleClose">Close the sample</button></div>
 
   <div id="out" hidden>
     <article class="story" id="story"></article>
     <div class="tools">
-      <button type="button" id="copy">Copy story and citations</button>
+      <button type="button" id="copy">Copy story and citations</button><button type="button" class="info" data-i="copy" aria-label="About Copy" aria-expanded="false" aria-controls="pop">i</button>
       <span class="meta" id="meta"></span>
     </div>
     <p class="verify"><b>Verify before you publish.</b> Storyteller writes only from the passages listed below, but it can still misread or over-compress them. Check each fact against the original source (the newspaper, record or page cited) before you quote or publish it.</p>
     <section class="sources" id="sourcesSec">
-      <h3>Sources used</h3>
+      <h3>Sources used<button type="button" class="info" data-i="cite" aria-label="About citations and sources" aria-expanded="false" aria-controls="pop">i</button></h3>
       <ol class="src" id="sources"></ol>
       <details class="more" id="moreWrap" hidden><summary>Also read, but not cited (<span id="moreN">0</span>)</summary><ol class="src" id="more"></ol></details>
     </section>
+    <section class="rmap" id="rmap" hidden aria-labelledby="rmH">
+      <h3 id="rmH">Research Map: where to go next<button type="button" class="info" data-i="map" aria-label="About the Research Map" aria-expanded="false" aria-controls="pop">i</button></h3>
+      <p class="rm-lede">Leads from the research index for this question: the originals behind the story, items in libraries and museums that nobody has read yet, gaps in the record, and searches to run yourself. The index chooses the leads; Storyteller only notes why each one matters.</p>
+      <h4 id="rmTopH">Top leads<button type="button" class="info" data-i="top" aria-label="About Top leads" aria-expanded="false" aria-controls="pop">i</button></h4><div id="rmTop"></div>
+      <button type="button" class="rm-more" id="rmMore" aria-expanded="false" aria-controls="rmDeep">Go deeper</button><button type="button" class="info" data-i="deeper" aria-label="About Go deeper" aria-expanded="false" aria-controls="pop">i</button>
+      <div id="rmDeep" hidden></div>
+      <p class="rm-note">Library details were checked on each institution’s own website; confirm before you go. Request emails use your own name and details.</p>
+    </section>
   </div>
 
-  <footer>Storyteller draws on the published histories at 2am.murrvalley.com, baseball.murrvalley.com, tennis.murrvalley.com and maringolf.org (eleven clubs; the password-protected Meadow Club section is not included), short excerpts of the sources behind their footnotes, digitized local newspapers from the California Digital Newspaper Collection, and the golf researchers' digests. Subscription newspaper items appear as summaries and citations only. Five stories a day per visitor. <a href="/sites/">More MurrValley sites</a> · <a href="#" id="signout" hidden>Sign out</a></footer>
+  </div>
+  <div id="pop" role="dialog" aria-labelledby="popT" hidden><b id="popT"></b><p id="popB"></p></div>
+  <dialog class="pm" id="primer" aria-labelledby="prH">
+    <h2 id="prH">Welcome to Storyteller</h2>
+    <p><b>What it does.</b> Storyteller searches the whole research collection for the Mill Valley Tennis Club, the 2AM Club and Mill Valley baseball (the published histories and every source gathered for them) and writes an answer with numbered citations to the passages it used.</p>
+    <p><b>Quick or Deep.</b> Quick search gives a short cited answer, written by Sonnet. Deep research gives the full story with the complete Research Map, written by Opus.</p>
+    <p><b>Reading the answer.</b> A number like [1] points to a source listed under the story. The Research Map below it shows where to go next: originals to read, items in libraries that nobody has read yet, gaps in the record, and searches to run yourself.</p>
+    <p class="cost"><b>About cost.</b> Storyteller costs money for every search. The site’s administrator covers a monthly budget, so please use your searches wisely.</p>
+    <p><b>Your allowance.</b> 15 searches a week: 10 Quick and 5 Deep. You can request more.</p>
+    <div class="bt"><button type="button" class="ghost" id="prSample">See a sample</button><button type="button" class="ghost" id="prTour">Take the 1-minute tour</button><button type="button" class="go" id="prOk">Got it</button></div>
+  </dialog>
+  <div id="tour" hidden><div id="tourHl"></div>
+    <div class="tour-card" id="tourCard" role="dialog" aria-modal="true" aria-labelledby="tourT" aria-describedby="tourB"><p class="tn" id="tourN"></p><b id="tourT" tabindex="-1"></b><p class="tb" id="tourB"></p>
+      <div class="bt"><button type="button" class="ghost" id="tourSkip">Skip</button><button type="button" class="ghost" id="tourBack">Back</button><button type="button" class="go" id="tourNext">Next</button></div></div></div>
+
+  <footer>Storyteller draws on the published histories at tennis.murrvalley.com, 2am.murrvalley.com and baseball.murrvalley.com, the sources behind their footnotes, and the newspaper articles, library records and web pages gathered for them. Licensed newspaper items appear as summaries and citations only. Your Mill Valley Storyteller account is separate from any MarinGolf.org account. · <a href="https://murrvalley.com/histories/">MurrValley histories</a> · <a class="mg-admin" href="https://maringolf.org/admin?tenant=murrvalley&amp;site=storyteller" rel="nofollow" style="opacity:.6;font-size:.86em">Admin</a> · <button type="button" class="howl mg-signout" id="signOut2" style="opacity:.6;font-size:.86em">Sign out</button></footer>
 </div>
+
+<script src="research-email.js"></script>
+<script>
+window.MV_SITE = { base: 'https://tennis.murrvalley.com', topic: 'the history of Mill Valley, California', domain: 'murrvalley.com' };
+(() => {
+  const API = 'https://mv-storyteller.dbmjr.workers.dev', TK = 'mvst2';
+  const $ = (id) => document.getElementById(id);
+  const tok = { get: () => { try { return localStorage.getItem(TK) || ''; } catch { return ''; } }, set: (t) => { try { t ? localStorage.setItem(TK, t) : localStorage.removeItem(TK); } catch { /* ignore */ } } };
+  try { localStorage.removeItem('mvst'); } catch { /* the retired shared-password session */ }
+  const post = async (path, body) => { const r = await fetch(API + path, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }); return { r, j: await r.json().catch(() => ({})) }; };
+  const err = (id, msg) => { const e = $(id); e.textContent = msg || ''; e.hidden = !msg; };
+  const note = (msg) => { $('aNote').textContent = msg || ''; };
+  let setMode = null; // {t} | {email}
+  function tab(up) { $('tIn').setAttribute('aria-selected', String(!up)); $('tUp').setAttribute('aria-selected', String(up)); $('pIn').hidden = up; $('pUp').hidden = !up; }
+  function show(why) {
+    $('app').hidden = true; $('topbar').hidden = true; $('auth').hidden = false; $('fSet').hidden = true; $('aMain').hidden = false;
+    note(why === 'expired' ? 'Please sign in again.' : why === 'out' ? 'You are signed out.' : '');
+    if (why === 'change') note('Please sign in again and choose your own password.');
+  }
+  function hide() { $('auth').hidden = true; $('app').hidden = false; $('topbar').hidden = false; }
+  function openSet(m) { setMode = m; $('aMain').hidden = true; $('fSet').hidden = false; $('setCur').hidden = !m.email; $('sC').required = !!m.email;
+    $('setH').textContent = m.email ? 'Choose your own password' : 'Choose your password'; $('setP').textContent = (m.email ? 'You signed in with a temporary password. ' : '') + 'Use at least 10 characters.'; $('sP').focus(); }
+  function start(t) { if (t) tok.set(t); hide(); if (window.MVST_START) window.MVST_START(); }
+  window.MVST_AUTH = { show, hide };
+  $('tIn').onclick = () => tab(false); $('tUp').onclick = () => tab(true);
+  $('forgotL').onclick = () => { $('fForgot').hidden = false; $('fgE').value = $('inE').value; $('fgE').focus(); };
+  $('fgX').onclick = () => { $('fForgot').hidden = true; };
+  $('fForgot').onsubmit = async (e) => { e.preventDefault(); try { const { j } = await post('/api/forgot', { email: $('fgE').value }); note(j.message || j.error || ''); $('fForgot').hidden = true; } catch { note('Could not send just now. Try again shortly.'); } };
+  $('fIn').onsubmit = async (e) => {
+    e.preventDefault(); err('inErr');
+    try {
+      const { r, j } = await post('/api/login', { email: $('inE').value, password: $('inP').value });
+      if (j.mustChange) { openSet({ email: j.email, current: $('inP').value }); $('sC').value = $('inP').value; return; }
+      if (!r.ok) { err('inErr', j.error || 'Sign-in failed.'); if (j.noAccess) { tab(true); $('uE').value = $('inE').value; } return; }
+      $('inP').value = ''; start(j.token);
+    } catch { err('inErr', 'Could not reach Storyteller. Check your connection and try again.'); }
+  };
+  $('fUp').onsubmit = async (e) => {
+    e.preventDefault(); err('upErr');
+    const d = Object.fromEntries(new FormData($('fUp')));
+    const ref = document.referrer || ''; d.site = /tennis\./.test(ref) ? 'tennis' : /2am\./.test(ref) ? '2am' : /baseball\./.test(ref) ? 'baseball' : 'storyteller';
+    try { const { r, j } = await post('/api/request', d); if (!r.ok) { err('upErr', j.error || 'Please check the form.'); return; }
+      $('fUp').reset(); tab(false); note(j.message || 'Thank you. Your request is in.'); } catch { err('upErr', 'Could not send. Try again.'); }
+  };
+  $('fSet').onsubmit = async (e) => {
+    e.preventDefault(); err('setErr');
+    if ($('sP').value !== $('sP2').value) { err('setErr', 'The two passwords do not match.'); return; }
+    const body = setMode && setMode.t ? { t: setMode.t, password: $('sP').value } : { email: setMode && setMode.email, current: $('sC').value, password: $('sP').value };
+    try { const { r, j } = await post('/api/password', body); if (!r.ok) { err('setErr', j.error || 'Could not set the password.'); return; }
+      $('sP').value = $('sP2').value = $('sC').value = '';
+      if (j.token) start(j.token); else { show(); note(j.message || 'Your password is set.'); }
+    } catch { err('setErr', 'Could not reach Storyteller. Try again.'); }
+  };
+  const so = () => { tok.set(''); show('out'); };
+  $('signOut').onclick = so; $('signOut2').onclick = so;
+  // links: #set=<token> (approval email), #sso=<pass> (admin from maringolf.org), ?signup / #signup
+  const h = new URLSearchParams(location.hash.slice(1));
+  if (h.get('set') || h.get('sso')) history.replaceState(null, '', location.pathname + location.search);
+  if (h.get('set')) { show(); openSet({ t: h.get('set') }); }
+  else if (h.get('sso')) { show(); note('Opening Storyteller as admin…'); post('/api/sso', { pass: h.get('sso') }).then(({ r, j }) => { if (r.ok && j.token) start(j.token); else note(j.error || 'That admin link has expired.'); }).catch(() => note('Could not reach Storyteller.')); }
+  else if (tok.get()) start();
+  else { show(); if (/[?&#]signup\b/.test(location.search + location.hash)) tab(true); }
+})();
+</script>
+<script>(function(){function add(i){if(i.dataset.pwt)return;i.dataset.pwt='1';var w=document.createElement('span');w.style.cssText='position:relative;display:block';i.parentNode.insertBefore(w,i);w.appendChild(i);i.style.paddingRight='70px';i.style.boxSizing='border-box';i.style.width='100%';var b=document.createElement('button');b.type='button';b.className='pw-toggle';b.textContent='Show';b.setAttribute('aria-label','Show password');b.setAttribute('aria-pressed','false');b.style.cssText='position:absolute;right:6px;top:50%;transform:translateY(-50%);width:auto;min-width:0;margin:0;padding:5px 10px;font:13px/1.2 system-ui,sans-serif;border-radius:6px;background:transparent;color:inherit;border:1px solid rgba(127,127,127,.5);cursor:pointer;box-shadow:none';b.onclick=function(){var s=i.type==='password';i.type=s?'text':'password';b.textContent=s?'Hide':'Show';b.setAttribute('aria-label',s?'Hide password':'Show password');b.setAttribute('aria-pressed',String(s));i.focus()};w.appendChild(b)}function run(){var l=document.querySelectorAll('input[type=password]');for(var k=0;k<l.length;k++)add(l[k])}run();if(window.MutationObserver)new MutationObserver(run).observe(document.body,{childList:true,subtree:true})})();</script>
 
 <script>
 (() => {
@@ -147,53 +350,88 @@ footer{border-top:1px solid var(--rule);padding:16px 0 40px;font-size:14px;color
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const safeUrl = (u) => (/^https?:\/\//i.test(u || '') ? u : null);
   let state = null;
+
   const API = 'https://mv-storyteller.dbmjr.workers.dev';
-  const HUB = 'https://murrvalley-hub.dbmjr.workers.dev';
-  const store = { get() { try { return localStorage.getItem('mvst') || ''; } catch { return ''; } }, set(v) { try { v ? localStorage.setItem('mvst', v) : localStorage.removeItem('mvst'); } catch { /* private window */ } } };
-  let token = store.get();
-  // the email link lands here with #s=<session> (or #e=expired)
-  { const h = new URLSearchParams(location.hash.slice(1));
-    if (h.get('s')) { token = h.get('s'); store.set(token); }
-    if (h.get('e')) $('siMsg').textContent = 'That sign-in link has expired or was already used. Request a new one below.';
-    if (location.hash) history.replaceState(null, '', location.pathname); }
-  const auth = () => (token ? { Authorization: 'Bearer ' + token } : {});
-  function signedOut(msg) { token = ''; store.set(''); $('f').hidden = true; $('signin').hidden = false; $('who').textContent = ''; $('signout').hidden = true; if (msg) $('siMsg').textContent = msg; }
-  $('signout').onclick = (e) => { e.preventDefault(); signedOut('You are signed out.'); };
-  $('signin').onsubmit = async (e) => {
-    e.preventDefault();
-    const first = $('siFirst').value.trim(), last = $('siLast').value.trim(), email = $('siEmail').value.trim();
-    const password = $('siPw').value;
-    if (!first || !last || !email || !password) { $('siStatus').textContent = 'First name, last name, email and the password, please.'; return; }
-    $('siGo').disabled = true; $('siStatus').textContent = 'Signing in…';
-    try {
-      const r = await fetch(API + '/api/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ first, last, email, password, hp: $('siHp').value }) });
-      const j = await r.json().catch(() => ({}));
-      if (j.ok && j.token) { token = j.token; store.set(token); $('siPw').value = ''; $('siStatus').textContent = ''; usage.first = true; await usage(); }
-      else $('siStatus').textContent = j.error || 'Sign-in failed. Try again.';
-    } catch { $('siStatus').textContent = 'Could not reach Storyteller. Try again shortly.'; }
-    $('siGo').disabled = false;
-  };
+  const TK = 'mvst2';
+  const tok = { get: () => { try { return localStorage.getItem(TK) || ''; } catch { return ''; } }, set: (t) => { try { t ? localStorage.setItem(TK, t) : localStorage.removeItem(TK); } catch { /* ignore */ } } };
+  const api = (path, init = {}) => fetch(API + path, { ...init, headers: { ...(init.headers || {}), ...(tok.get() ? { Authorization: 'Bearer ' + tok.get() } : {}) } });
+  const signedOut = (why) => { tok.set(''); if (window.MVST_AUTH) window.MVST_AUTH.show(why); };
+  // Saved-story view (/storyteller/r/<id>, admin only): the recorded event stream is replayed through the same code.
+  const REPLAY = window.ST_REPLAY || null;
+  let logId = null;
+  // Research Map engagement: small beacons tied to this story's log row (no other personal data).
+  function beacon(kind, target) {
+    if (REPLAY || !logId) return;
+    try { api('/api/event', { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ log: logId, kind, target: String(target || '').slice(0, 300) }) }).catch(() => {}); } catch { /* ignore */ }
+  }
 
   for (const b of document.querySelectorAll('.chip')) b.onclick = () => { $('q').value = b.textContent; $('q').focus(); };
 
+  // Weekly allowance (Monday to Sunday, Pacific): "Quick 3 of 10 · Deep 1 of 5 this week". The admin is unlimited.
+  let isAdmin = false;
+  function showWeek(w, admin, unlimited) {
+    if (admin) { $('usage').textContent = 'Admin · no weekly limit'; $('goQ').disabled = $('goD').disabled = false; $('morebar').hidden = true; return; }
+    if (unlimited) { $('usage').textContent = 'Unlimited · no weekly limit'; $('goQ').disabled = $('goD').disabled = false; $('morebar').hidden = true; return; }
+    if (!w || !w.used) return;
+    const u = w.used, a = w.allowed;
+    $('usage').textContent = `Quick ${u.quick} of ${a.quick} · Deep ${u.deep} of ${a.deep} this week`;
+    $('goQ').disabled = u.quick >= a.quick; $('goD').disabled = u.deep >= a.deep;
+    const out = u.quick >= a.quick || u.deep >= a.deep;
+    $('morebar').hidden = false; $('moreBtn').classList.toggle('hot', out);
+    $('moreNote').textContent = out ? (u.quick >= a.quick && u.deep >= a.deep ? 'You have used this week’s searches.' : `You have used this week’s ${u.quick >= a.quick ? 'Quick' : 'Deep'} searches.`) : '';
+  }
   async function usage() {
     try {
-      if (!token) { signedOut(); return; }
-      const r = await fetch(API + '/api/me' + (usage.first ? '' : '?visit=1'), { cache: 'no-store', headers: auth() });
-      usage.first = true;
-      if (r.status === 401) { signedOut('Your session has ended. Sign in again to keep asking.'); return; }
+      const r = await api('/api/me?visit=' + (usage.v ? '0' : '1'), { cache: 'no-store' }); usage.v = 1;
+      if (r.status === 401) { const j0 = await r.json().catch(() => ({})); signedOut(j0.mustChange ? 'change' : 'expired'); return; }
       const j = await r.json();
-      if (j.token) { token = j.token; store.set(token); }
-      $('signin').hidden = true; $('f').hidden = false; $('signout').hidden = false;
-      $('who').textContent = j.first ? ` · ${j.first}` : '';
-      if (j.resting) { $('usage').textContent = j.restingMessage; $('go').disabled = true; return; }
-      $('usage').textContent = j.admin ? `Admin · ${j.modelName}` : `${j.used} of ${j.daily} stories today`;
-      $('go').disabled = !j.admin && j.used >= j.daily;
-      return;
-      $('go').disabled = !j.admin && j.used >= j.daily;
+      if (j.token) tok.set(j.token);
+      if (window.MVST_AUTH) window.MVST_AUTH.hide();
+      isAdmin = !!j.admin;
+      maybePrimer(j.primerSeen);
+      $('whoLine').textContent = j.admin ? 'Admin · ' : j.email ? `Signed in as ${j.email} · ` : '';
+      if (j.admin) $('whoLine').innerHTML = 'Admin · <a href="https://maringolf.org/admin/stlog?tenant=murrvalley&amp;site=storyteller" target="_blank" rel="noopener">Search log</a> · ';
+      // Admin only: running Storyteller cost (same numbers as maringolf.org/admin → Storyteller)
+      if (false) fetch('about:blank').then((x) => (x.ok ? x.json() : null)).then((a) => {
+        if (!a || !Array.isArray(a.totals)) return;
+        const L = { hour: 'Last hour', day: 'Last 24 hours', week: 'Last 7 days', month: 'Last 30 days', quarter: 'Last 90 days', year: 'Last 365 days', all: 'All time' };
+        const S = { hour: '1 hour', day: '1 day', week: 'Week', month: 'Month', quarter: 'Quarter', year: 'Year', all: 'All' };
+        const el = $('adminCost');
+        let pick = 'month';
+        try { pick = localStorage.getItem('stCostPeriod') || 'month'; } catch (e) {}
+        if (!a.totals.some((t) => t.k === pick)) pick = 'month';
+        const draw = () => {
+          const t = a.totals.find((x) => x.k === pick) || a.totals[0];
+          el.innerHTML = `<div class="lbl">Running cost · ${L[t.k] || t.k}</div><div class="big">$${(+t.usd).toFixed(2)}</div>`
+            + `<div class="sub">${t.n} stor${t.n === 1 ? 'y' : 'ies'}${t.n ? ` · about $${(t.usd / t.n).toFixed(2)} each` : ''}</div>`
+            + '<div class="stc" style="margin-top:10px;text-align:left"></div>'
+            + '<div class="per" role="group" aria-label="Time period">' + a.totals.map((x) => `<button type="button" data-k="${x.k}" class="${x.k === pick ? 'on' : ''}" aria-pressed="${x.k === pick}"><span>${S[x.k] || x.k}</span></button>`).join('') + '</div>'
+            + `<div class="cap">This calendar month: $${(+a.spend).toFixed(2)} of the $${(+a.cap).toFixed(0)} cap</div>`;
+          el.querySelectorAll('.per button').forEach((b) => (b.onclick = () => { pick = b.dataset.k; try { localStorage.setItem('stCostPeriod', pick); } catch (e) {} draw(); }));
+          stCostChart(el.querySelector('.stc'), a.series || [], pick);
+        };
+        draw();
+        el.hidden = false;
+      }).catch(() => {});
+      if (j.resting && j.admin) { $('usage').textContent = 'Admin · the monthly cap is reached (you can go past it; you will be asked to confirm)'; $('goQ').disabled = $('goD').disabled = false; $('morebar').hidden = true; return; }
+      if (j.resting) { $('usage').textContent = j.restingMessage; $('goQ').disabled = $('goD').disabled = true; return; }
+      showWeek(j, j.admin, j.unlimited);
+      if (j.pendingMore) $('moreNote').textContent = 'Your request for more searches is with Dan.';
     } catch { /* leave as is */ }
   }
-  usage();
+  $('moreBtn').onclick = () => { $('mrErr').hidden = true; $('moreDlg').showModal(); };
+  $('mrX').onclick = () => $('moreDlg').close();
+  $('moreF').onsubmit = async (e) => {
+    e.preventDefault(); $('mrGo').disabled = true;
+    try {
+      const r = await api('/api/more', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ quick: +$('mrQ').value, deep: +$('mrD').value, reason: $('mrR').value }) });
+      const j = await r.json().catch(() => ({}));
+      if (j.ok) { $('moreDlg').close(); $('moreNote').textContent = j.message; $('moreBtn').classList.remove('hot'); }
+      else { $('mrErr').textContent = j.error || 'Could not send. Try again.'; $('mrErr').hidden = false; }
+    } catch { $('mrErr').textContent = 'Could not send. Try again.'; $('mrErr').hidden = false; }
+    $('mrGo').disabled = false;
+  };
+  window.MVST_START = () => { if (!REPLAY) usage(); };
 
   // ---- rendering ----
   function displayNums() {
@@ -236,7 +474,7 @@ footer{border-top:1px solid var(--rule);padding:16px 0 40px;font-size:14px;color
     const u = safeUrl(s.url);
     const q = (quotes || []).slice(0, 2).map((x) => `“${esc(x.length > 220 ? x.slice(0, 220) + '…' : x)}”`).join(' ');
     return `<li id="src-${dn}"><span class="n">${dn}.</span><div><div class="tt">${u ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(s.title)}</a>` : esc(s.title)}</div>
-      <div class="m">${esc(s.clubName)} · ${esc({ page: 'published page', staff: 'staff roster', digest: 'research digest', excerpt: 'source excerpt', newspaper: 'digitized newspaper' }[s.kind] || s.kind)}${s.vis === 'licensed-summary' ? ' · subscription source (summary only)' : ''}</div>
+      <div class="m">${esc(s.clubName)} · ${esc({ page: 'published page', excerpt: 'source excerpt', newspaper: 'newspaper article', original: 'original source', notes: 'research notes' }[s.kind] || s.kind)}${s.vis === 'licensed-summary' ? ' · includes licensed items (summaries only)' : ''}</div>
       ${origs ? `<div class="orig">Original sources: ${origs}</div>` : ''}${q ? `<div class="q">Cited text: ${q}</div>` : ''}</div></li>`;
   }
   function render(final) {
@@ -251,6 +489,98 @@ footer{border-top:1px solid var(--rule);padding:16px 0 40px;font-size:14px;color
       $('more').innerHTML = rest.map((s) => sourceItem(s, '·', null).replace(/id="src-·"/, '')).join('');
     }
   }
+  // ---- Research Map ----
+  const M = window.MGResearch;
+  function citedNums() { return displayNums(); }
+  const ABBR = { EDA: 'UC Berkeley Environmental Design Archives', ATK: 'Anne T. Kent California Room', 'MV Hist Rm': 'Mill Valley History Room', CSL: 'California State Library', MHM: 'Marin History Museum', SFPL: 'San Francisco Public Library', LOC: 'Library of Congress', UC: 'University of California libraries' };
+  function repoName(m, slug, holder) {
+    const r = slug && m.repos[slug]; if (r) return r.short || r.name;
+    const h = (holder || '').split(/[;(]/)[0].replace(/\*/g, '').trim();
+    return ABBR[h] || h || 'Other holders (ask your library)';
+  }
+  function groupBy(list, m) {
+    const g = new Map();
+    for (const x of list) { const k = x.repo || 'holder:' + repoName(m, null, x.holder); if (!g.has(k)) g.set(k, []); g.get(k).push(x); }
+    return [...g.entries()];
+  }
+  function itemHTML(x) {
+    const t = safeUrl(x.url) ? `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title)}</a>` : esc(x.title);
+    const note = x.why || x.description;
+    return `<li>${t}${x.call ? ` <span class="rm-call">· ${esc(x.call)}</span>` : ''}${note ? `<span class="rm-why">${esc(note)}</span>` : ''}</li>`;
+  }
+  function locatedHTML(list, m) {
+    return groupBy(list, m).map(([k, items]) => {
+      const slug = k.startsWith('holder:') ? null : k; const repo = slug && m.repos[slug];
+      return `<div class="rm-g"><div class="rm-gh"><b>${esc(repoName(m, slug, items[0].holder))}</b><span class="rm-links">${M.linksHTML(repo || null, items.map((i) => i.id).join(','))}</span></div><ul class="rm-i">${items.map(itemHTML).join('')}</ul></div>`;
+    }).join('');
+  }
+  function gapsHTML(list, m) {
+    return `<ul class="rm-i">${list.map((g) => {
+      const guides = [...new Set([g.repo, ...(g.repos || [])].filter((r) => r && m.repos[r]))].map((r) => `<a href="${esc(m.repos[r].guide || '')}" target="_blank" rel="noopener">${esc(m.repos[r].short || m.repos[r].name)}: instructions</a>`).join(' · ');
+      return `<li><span class="rm-kind">Gap</span>${esc(g.title)}${g.why ? `<span class="rm-why">${esc(g.why)}</span>` : ''}<span class="rm-call">${esc(g.description)} <b>To fill it:</b> ${esc(g.fill)}</span>${guides ? `<span class="rm-call" style="display:block">${guides}</span>` : ''}</li>`;
+    }).join('')}</ul>`;
+  }
+  function originalsList(m) {
+    const order = citedNums();
+    return m.originals.map((g) => ({ ...g, items: g.items.filter((i) => order.has(i.n)).map((i) => ({ ...i, dn: order.get(i.n) })).sort((a, b) => a.dn - b.dn) })).filter((g) => g.items.length);
+  }
+  function originalsHTML(groups, m) {
+    return groups.map((g) => {
+      let links = '';
+      if (g.key === 'library-card-databases') { const r = m.repos[g.key] || {}; links = `${safeUrl(r.website) ? `<a href="${esc(r.website)}" target="_blank" rel="noopener">View at SFPL</a> · ` : ''}<a href="${esc(m.dbGuide)}" target="_blank" rel="noopener">How to get access</a>`; }
+      else if (m.repos[g.key]) links = M.linksHTML(m.repos[g.key], 'orig:' + g.key);
+      else links = esc(g.how);
+      return `<div class="rm-g"><div class="rm-gh"><b>${esc(g.name)}</b><span class="rm-links">${links}</span></div><ul class="rm-i">${g.items.slice(0, 12).map((i) => `<li>[${i.dn}] ${safeUrl(i.url) ? `<a href="${esc(i.url)}" target="_blank" rel="noopener">${esc(i.label || i.url)}</a>` : esc(i.label)}</li>`).join('')}${g.items.length > 12 ? `<li class="rm-call">and ${g.items.length - 12} more</li>` : ''}</ul></div>`;
+    }).join('');
+  }
+  function searchHTML(links, m) {
+    const s = m.search;
+    return `<p class="rm-call">Searching for ${s.terms.map((t) => '“' + esc(t) + '”').join(', ')}${s.years ? `, ${s.years[0]}–${s.years[1]}` : ''}. These open the catalogs’ own search pages.</p><ul class="rm-i">${links.map((l) => `<li><a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.name)}</a> <span class="rm-call">· ${esc(l.what)}</span></li>`).join('')}</ul>`;
+  }
+  function renderMap() {
+    const m = state.map; if (!m) return;
+    const byId = (list, ids) => ids.map((id) => list.find((x) => x.id === id)).filter(Boolean);
+    const orig = originalsList(m);
+    const tLoc = byId(m.located, m.top.located), tGap = byId(m.gaps, m.top.gaps);
+    const tOrig = orig.filter((g) => m.top.originals.includes(g.key)).slice(0, 1).map((g) => ({ ...g, items: g.items.slice(0, 3) }));
+    const tSearch = m.search.links.filter((l) => m.top.search.includes(l.url));
+    let top = '';
+    if (tLoc.length) top += locatedHTML(tLoc, m);
+    if (tGap.length) top += `<div class="rm-g">${gapsHTML(tGap, m)}</div>`;
+    if (tOrig.length) top += originalsHTML(tOrig, m);
+    if (tSearch.length) top += `<div class="rm-g"><div class="rm-gh"><b>Search it yourself</b></div><ul class="rm-i">${tSearch.map((l) => `<li><a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.name)}</a> <span class="rm-call">· ${esc(l.what)}</span></li>`).join('')}</ul></div>`;
+    $('rmTop').innerHTML = top || '<p class="rm-call">No leads in the index match this question closely.</p>';
+    let deep = '';
+    if (orig.length) deep += `<section data-part="orig"><h4>Read the originals${INFO_BTN('orig', 'Read the originals')}</h4>${originalsHTML(orig, m)}</section>`;
+    if (m.located.length) deep += `<section data-part="located"><h4>Located, not yet read <span class="rm-call">(${m.located.length})</span>${INFO_BTN('located', 'Located, not yet read')}</h4><p class="rm-legend"><span>Request email${INFO_BTN('email', 'Request email')}</span><span>How to request${INFO_BTN('how', 'How to request')}</span><span>Directions &amp; website${INFO_BTN('dir', 'Directions and website')}</span></p>${locatedHTML(m.located, m)}</section>`;
+    if (m.gaps.length) deep += `<section data-part="gaps"><h4>Known gaps <span class="rm-call">(${m.gaps.length})</span>${INFO_BTN('gaps', 'Known gaps')}</h4>${gapsHTML(m.gaps, m)}</section>`;
+    deep += `<section data-part="search"><h4>Search it yourself${INFO_BTN('search', 'Search it yourself')}</h4>${searchHTML(m.search.links, m)}</section>`;
+    $('rmDeep').innerHTML = deep;
+    $('rmap').hidden = false;
+  }
+  $('rmMore').onclick = () => { const open = $('rmDeep').hidden; $('rmDeep').hidden = !open; $('rmMore').setAttribute('aria-expanded', String(open)); $('rmMore').textContent = open ? 'Show fewer' : 'Go deeper'; };
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest('#rmap button.mgr-lnk'); if (!b || !state || !state.map) return;
+    const m = state.map, slug = b.dataset.repo || null, repo = slug ? m.repos[slug] : null;
+    if (b.dataset.act === 'how' && repo) { M.openHow(repo); return; }
+    if (b.dataset.act !== 'email') return;
+    const k = b.dataset.k || '';
+    let items;
+    if (k.startsWith('orig:')) items = (originalsList(m).find((g) => g.key === k.slice(5)) || { items: [] }).items.map((i) => ({ title: i.label, call: '', url: i.url }));
+    else { const ids = k.split(','); items = m.located.filter((x) => ids.includes(x.id)).map((x) => ({ title: x.title, call: x.call, url: x.url, holder: x.holder })); }
+    if (items.length) M.openEmail(items, repo);
+  });
+  function mapText() {
+    const m = state.map; if (!m) return '';
+    let t = '\nResearch map: where to go next\n';
+    const orig = originalsList(m);
+    if (orig.length) { t += '\nRead the originals\n'; for (const g of orig) { t += `  ${g.name}${m.repos[g.key] ? ` (guide: ${m.repos[g.key].guide || ''})` : g.key === 'library-card-databases' ? ` (how to get access: ${m.dbGuide})` : ''}\n`; for (const i of g.items.slice(0, 12)) t += `    [${i.dn}] ${i.label}${i.url ? ` <${i.url}>` : ''}\n`; } }
+    if (m.located.length) { t += '\nLocated, not yet read\n'; for (const [k, items] of groupBy(m.located, m)) { const slug = k.startsWith('holder:') ? null : k; t += `  ${repoName(m, slug, items[0].holder)}${slug && m.repos[slug] ? ` (how to request: ${(m.repos[slug] || {}).guide || ''})` : ''}\n`; for (const x of items) t += `    - ${x.title}${x.call ? ` | ${x.call}` : ''}${x.url ? ` <${x.url}>` : ''}${x.why ? `\n      Why: ${x.why}` : ''}\n`; } }
+    if (m.gaps.length) { t += '\nKnown gaps\n'; for (const g of m.gaps) t += `  - ${g.title}: ${g.description} To fill it: ${g.fill}\n`; }
+    t += '\nSearch it yourself\n'; for (const l of m.search.links) t += `  ${l.name}: ${l.url}\n`;
+    return t;
+  }
+
   function plainText() {
     const order = displayNums();
     const cited = [...order.entries()].sort((a, b) => a[1] - b[1]);
@@ -260,31 +590,38 @@ footer{border-top:1px solid var(--rule);padding:16px 0 40px;font-size:14px;color
       t += `[${dn}] ${s.title}${s.url ? ` <${s.url}>` : ''}\n`;
       for (const r of (s.refs || []).slice(0, 6)) if (r.label || r.url) t += `     ${r.label || ''}${r.url ? ` <${r.url}>` : ''}\n`;
     }
-    return t + '\nWritten by the Mill Valley Storyteller (murrvalley.com/storyteller) from the sources above. Verify each fact against the original source before publishing.\n';
+    t += mapText();
+    return t + '\nWritten by the Mill Valley Storyteller (MurrValley.com research desk) from the sources above. Verify each fact against the original source before publishing.\n';
   }
+  $('copy').textContent = 'Copy story, citations and research map';
   $('copy').onclick = async () => {
     try { await navigator.clipboard.writeText(plainText()); $('copy').textContent = 'Copied'; }
     catch { $('copy').textContent = 'Copy failed'; }
-    setTimeout(() => { $('copy').textContent = 'Copy story and citations'; }, 1800);
+    setTimeout(() => { $('copy').textContent = state && state.map ? 'Copy story, citations and research map' : 'Copy story and citations'; }, 1800);
   };
 
   // ---- asking ----
   $('f').onsubmit = async (e) => {
     e.preventDefault();
     const q = $('q').value.trim();
+    const mode = (e.submitter && e.submitter.dataset.mode) || 'quick';
     if (q.length < 8) { setStatus('Ask a question or describe the story you want (a sentence is plenty).', true); return; }
-    $('go').disabled = true;
-    $('out').hidden = true;
+    $('goQ').disabled = $('goD').disabled = true;
+    $('out').hidden = true; $('empty').hidden = true; $('sampleBar').hidden = true; saved = null;
+    $('rmap').hidden = true; $('rmDeep').hidden = true; $('rmMore').setAttribute('aria-expanded', 'false'); $('rmMore').textContent = 'Go deeper';
     setStatus('Reading the sources…');
-    state = { segs: [], sources: [], quotes: new Map() };
+    state = { segs: [], sources: [], quotes: new Map(), mode };
     let res;
+    const ask = (override) => api('/api/story', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ q, mode, ...(override ? { override: true } : {}) }) });
     try {
-      res = await fetch(API + '/api/story', { method: 'POST', headers: { 'Content-Type': 'application/json', ...auth() }, body: JSON.stringify({ q }) });
-    } catch { setStatus('Could not reach Storyteller. Check your connection and try again.', true); $('go').disabled = false; return; }
+      res = await ask(false);
+      // The admin can go past the monthly cap, after confirming (the server logs it as an admin cap override).
+      if (res.status === 402 && isAdmin && confirm('The monthly cap is reached. Run this search anyway? It will be logged as an admin cap override.')) res = await ask(true);
+    } catch { setStatus('Could not reach Storyteller. Check your connection and try again.', true); $('goQ').disabled = $('goD').disabled = false; return; }
     if (!res.ok || !(res.headers.get('Content-Type') || '').includes('event-stream')) {
       let msg = `Something went wrong (${res.status}).`;
       try { msg = (await res.json()).error || msg; } catch { /* keep */ }
-      if (res.status === 401) { signedOut('Your session has ended. Sign in again to keep asking.'); $('go').disabled = false; return; }
+      if (res.status === 401) { signedOut('expired'); $('goQ').disabled = $('goD').disabled = false; return; }
       setStatus(msg, true); usage(); return;
     }
     const reader = res.body.getReader();
@@ -301,7 +638,13 @@ footer{border-top:1px solid var(--rule);padding:16px 0 40px;font-size:14px;color
         const ev = (raw.match(/^event: (.*)$/m) || [])[1];
         const dl = (raw.match(/^data: (.*)$/m) || [])[1];
         if (!ev || !dl) continue;
-        const d = JSON.parse(dl);
+        onEvent(ev, JSON.parse(dl), schedule);
+      }
+    }
+    usage();
+  };
+  function onEvent(ev, d, schedule) {
+        if (ev === 'sources') { logId = state.sample ? null : d.logId || null; if (d.mode) state.mode = d.mode; }
         if (ev === 'sources') { state.sources = d.sources; setStatus(`Writing from ${d.sources.length} passages with ${d.modelName}…`); $('out').hidden = false; }
         else if (ev === 'block') state.segs.push({ text: '', cites: [] });
         else if (ev === 'text') { if (!state.segs.length) state.segs.push({ text: '', cites: [] }); state.segs[state.segs.length - 1].text += d.text; schedule(); }
@@ -311,16 +654,196 @@ footer{border-top:1px solid var(--rule);padding:16px 0 40px;font-size:14px;color
           if (!state.quotes.has(d.n)) state.quotes.set(d.n, []);
           if (d.quote && state.quotes.get(d.n).length < 2) state.quotes.get(d.n).push(d.quote);
           schedule();
-        } else if (ev === 'done') {
+        } else if (ev === 'map') { state.map = d; render(true); renderMap(); $('rmMore').hidden = state.mode === 'quick'; }
+        else if (ev === 'done') {
           render(true);
           setStatus('');
+          if (state.sample) { $('meta').textContent = `Sample · Deep research · ${d.modelName}`; return; }
           $('meta').textContent = `${d.modelName} · about $${Number(d.cost).toFixed(3)}`;
-          if (d.used != null) $('usage').textContent = `${d.used} of ${d.daily} stories today`;
+          showWeek(d.week, d.admin, d.unlimited);
         } else if (ev === 'error') { render(true); setStatus(d.error, true); }
-      }
-    }
-    usage();
+  }
+  document.addEventListener('click', (e) => { // classify Research Map / citation clicks for the beacons (capture: before dialogs open)
+    if (!state || REPLAY || !logId) return;
+    const t = e.target.closest('a,button'); if (!t) return;
+    const href = t.getAttribute('href') || '', m = state.map;
+    let kind = null;
+    if (t.id === 'copy') kind = 'copy_story';
+    else if (t.id === 'rmMore') kind = $('rmDeep').hidden ? 'go_deeper' : null;
+    else if (t.closest('sup.c')) kind = 'citation';
+    else if (t.closest('#sources .tt, #more .tt')) kind = 'view_source';
+    else if (t.closest('#sources .orig, #more .orig')) kind = 'originals';
+    else if (t.classList.contains('mgr-copy')) kind = 'email_copy';
+    else if (t.matches('button.mgr-lnk[data-act="email"]')) kind = 'email_open';
+    else if (t.matches('button.mgr-lnk[data-act="how"]')) kind = 'how_to_request';
+    else if (t.matches('a.mgr-lnk')) kind = 'directions';
+    else if (href.startsWith('mailto:')) kind = 'email_mailto';
+    else if (/\/research-guide\//.test(href)) kind = 'guide';
+    else if (m && m.search && m.search.links.some((l) => l.url === href)) kind = 'search';
+    else if (m && m.originals && m.originals.some((g) => g.items.some((i) => i.url && i.url === href))) kind = 'originals';
+    else if (m && m.located && m.located.some((x) => x.url && x.url === href)) kind = 'located';
+    if (kind) beacon(kind, href.startsWith('mailto:') ? 'mailto' : href || t.dataset.repo || t.textContent.trim().slice(0, 80));
+  }, true);
+  if (REPLAY) {
+    $('empty').hidden = true; $('howLink').hidden = true;
+    $('q').value = REPLAY.q || ''; $('q').readOnly = true; $('go').hidden = true; $('go').style.display = 'none';
+    for (const x of document.querySelectorAll('.ex')) x.style.display = 'none';
+    const when = new Date(String(REPLAY.ts).replace(' ', 'T') + 'Z').toLocaleString('en-US', { timeZone: 'America/Los_Angeles', dateStyle: 'medium', timeStyle: 'short' });
+    state = { segs: [], sources: [], quotes: new Map(), mode: REPLAY.mode || 'deep' };
+    $('out').hidden = !REPLAY.events.length;
+    for (const [ev, d] of REPLAY.events) onEvent(ev, d, () => render(false));
+    if (REPLAY.events.length && !REPLAY.events.some(([ev]) => ev === 'done' || ev === 'error')) render(true);
+    if (!REPLAY.events.length) setStatus(`Nothing was written for this request (status: ${REPLAY.status}).`, true);
+    $('usage').textContent = `Saved story #${REPLAY.id} · ${REPLAY.mode === 'quick' ? 'Quick search' : REPLAY.mode === 'deep' ? 'Deep research' : ''} · ${when} · ${REPLAY.status}`;
+  }
+
+  // ================= 2026-11-18: primer, (i) explainers, sample, tour =================
+  const INFO = {
+    ask: ['The question box', 'Ask a question or describe the story you want, in a sentence or two. Name a person, a place or a decade if you can. The Try one examples fill the box for you.'],
+    quick: ['Quick search', 'A short answer with numbered citations and the top research leads, written by Sonnet. Try this first: it uses one of your 10 Quick searches this week.'],
+    deep: ['Deep research', 'The full story from more sources, with the complete Research Map, written by Opus. It costs more, so save it for questions that need it. You have 5 a week.'],
+    allow: ['Your weekly allowance', 'Each person has 10 Quick searches and 5 Deep research a week, Monday to Sunday (Pacific). A search that fails does not count.'],
+    more: ['Request more searches', 'Ran out this week? Ask for more and say why. Dan reviews each request and you get an email when it is approved.'],
+    cite: ['Citations and sources', 'A number like [1] in the story points to a passage listed here. Each source shows its site and kind, the original sources behind it, and the text that was cited. Check facts against the originals before you publish.'],
+    map: ['The Research Map', 'Leads chosen from the research index for this question: originals to read, items in libraries that nobody has read yet, gaps in the record, and searches to run yourself.'],
+    top: ['Top leads', 'The few leads most likely to help with this question, with a line on why each one matters.'],
+    deeper: ['Go deeper', 'Opens the full Research Map: every original, located item, known gap and search link for this question.'],
+    orig: ['Read the originals', 'The newspapers, records and books behind the cited passages, grouped by where they are held, with links where they are online.'],
+    located: ['Located, not yet read', 'Items in libraries and museums that match your question but that nobody has read for this project yet. Each group has ways to ask for them.'],
+    email: ['Request email', 'Writes a polite email to the library or museum asking about these items, with titles and call numbers filled in. You can edit it and send it from your own email.'],
+    how: ['How to request', 'How this institution handles requests: appointments, reading rooms, copies, fees and contacts.'],
+    dir: ['Directions and website', 'Opens the institution’s own website in a new tab, for hours, directions and its catalog.'],
+    gaps: ['Known gaps', 'Things the record does not say yet, and what kind of source could fill each gap.'],
+    search: ['Search it yourself', 'Links that open other catalogs and newspaper archives with your search already typed in.'],
+    copy: ['Copy', 'Copies the story, its citations and the Research Map as plain text, ready to paste into notes or an email.'],
   };
+  function INFO_BTN(k, label) { return `<button type="button" class="info" data-i="${k}" aria-label="About ${esc(label)}" aria-expanded="false" aria-controls="pop">i</button>`; }
+  let popFor = null;
+  function closePop(focus) { if (!popFor) return; popFor.setAttribute('aria-expanded', 'false'); const b = popFor; popFor = null; $('pop').hidden = true; if (focus) b.focus(); }
+  function openPop(b) {
+    const [t, body] = INFO[b.dataset.i] || ['', ''];
+    closePop(false); popFor = b; b.setAttribute('aria-expanded', 'true');
+    $('popT').textContent = t; $('popB').textContent = body; const pop = $('pop'); pop.hidden = false;
+    const r = b.getBoundingClientRect(), w = pop.offsetWidth, h = pop.offsetHeight, vw = document.documentElement.clientWidth;
+    let left = Math.min(Math.max(16, r.left + r.width / 2 - w / 2), vw - 16 - w), top = r.bottom + 8;
+    if (r.bottom + 8 + h > innerHeight && r.top - 8 - h > 0) top = r.top - 8 - h;
+    pop.style.left = (left + scrollX) + 'px'; pop.style.top = (top + scrollY) + 'px';
+  }
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest('button.info');
+    if (b) { e.preventDefault(); e.stopPropagation(); if (popFor === b) closePop(false); else openPop(b); return; }
+    if (popFor && !e.target.closest('#pop')) closePop(false);
+  });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && popFor) { e.preventDefault(); closePop(true); } });
+  addEventListener('resize', () => closePop(false));
+
+  // ---- the free sample (a saved Deep research story; no API call, no allowance change, no beacons) ----
+  let saved = null, sampleData = null;
+  async function showSample() {
+    if (REPLAY) return false;
+    if (state && state.segs && state.segs.length && !state.sample) saved = { state, logId, meta: $('meta').textContent }; // keep a real story to return to
+    if (!sampleData) { try { const r = await fetch('sample.json', { cache: 'force-cache' }); if (!r.ok) throw 0; sampleData = await r.json(); } catch { setStatus('The sample could not be loaded. Try again shortly.', true); return false; } }
+    closePop(false);
+    state = { segs: [], sources: [], quotes: new Map(), mode: sampleData.mode || 'deep', sample: true }; logId = null;
+    $('rmap').hidden = true; $('rmDeep').hidden = true; $('rmMore').setAttribute('aria-expanded', 'false'); $('rmMore').textContent = 'Go deeper';
+    $('out').hidden = false; $('empty').hidden = true;
+    for (const [ev, d] of sampleData.events) onEvent(ev, d, () => {});
+    render(true); setStatus('');
+    $('sampleQ').textContent = sampleData.q; $('sampleBar').hidden = false;
+    return true;
+  }
+  function closeSample() {
+    $('sampleBar').hidden = true;
+    if (saved) { state = saved.state; logId = saved.logId; render(true); renderMap(); $('rmMore').hidden = state.mode === 'quick'; $('meta').textContent = saved.meta; saved = null; }
+    else { state = null; $('out').hidden = true; $('empty').hidden = false; }
+  }
+  $('seeSample').onclick = () => showSample().then((ok) => ok && $('sampleBar').scrollIntoView({ block: 'start', behavior: 'smooth' }));
+  $('sampleClose').onclick = closeSample;
+
+  // ---- first-time primer: once per account (D1), with this browser's memory as the fallback ----
+  const LS = 'st_primer_seen';
+  const lsGet = () => { try { return localStorage.getItem(LS) === '1'; } catch { return false; } };
+  const lsSet = () => { try { localStorage.setItem(LS, '1'); } catch { /* ignore */ } };
+  let primerMarked = false;
+  function markPrimer() { if (primerMarked) return; primerMarked = true; lsSet(); try { api('/api/primer', { method: 'POST' }).catch(() => {}); } catch { /* ignore */ } }
+  function openPrimer() { closePop(false); if (!$('primer').open) $('primer').showModal(); $('prOk').focus(); }
+  function maybePrimer(seen) { if (REPLAY || primerMarked) return; if (seen === false || (seen == null && !lsGet())) openPrimer(); }
+  $('primer').addEventListener('close', markPrimer);
+  $('howLink').onclick = openPrimer;
+  $('prOk').onclick = () => $('primer').close();
+  $('prSample').onclick = async () => { $('primer').close(); if (await showSample()) $('sampleBar').scrollIntoView({ block: 'start', behavior: 'smooth' }); };
+  $('prTour').onclick = () => { $('primer').close(); startTour(); };
+
+  // ---- the tour: highlights each part in turn (uses the sample if no story is on screen) ----
+  const TOUR = [
+    { el: () => $('q'), t: 'The question box', b: 'Type a question or describe the story you want. A sentence is plenty; names, places and decades help.' },
+    { el: () => $('go'), t: 'Quick search or Deep research', b: 'Quick gives a short cited answer (Sonnet). Deep gives the full story and the complete Research Map (Opus). Try Quick first.' },
+    { el: () => [$('usage').parentNode, $('morebar')], t: 'Your weekly allowance', b: '10 Quick and 5 Deep a week. If you run out, use Request more searches and Dan will review it.', more: true },
+    { el: () => { const c = document.querySelector('#story sup.c'); return c ? c.closest('p,li') || c : null; }, t: 'The story and its citations', b: 'Each number like [1] points to the source the sentence came from. Click it to jump to that source.' },
+    { el: () => [document.querySelector('#sourcesSec h3'), document.querySelector('#sources li')], t: 'Sources used', b: 'Every cited passage, with its site, the original sources behind it, and the text that was cited. Check facts here before you publish.' },
+    { el: () => [$('rmH'), $('rmTopH'), document.querySelector('#rmTop .rm-g')], t: 'Research Map: Top leads', b: 'The leads most likely to help with this question, each with a short note on why it matters.' },
+    { el: () => $('rmMore'), t: 'Go deeper', b: 'Opens the full map: the originals, items in libraries nobody has read yet, known gaps and search links.', deep: true },
+    { el: () => { const s = document.querySelector('[data-part="orig"]'); return s && [s.querySelector('h4'), s.querySelector('.rm-g')]; }, t: 'Read the originals', b: 'The newspapers, records and books behind the cited passages, grouped by where they are held.', deep: true },
+    { el: () => { const s = document.querySelector('[data-part="located"]'); return s && [s.querySelector('h4'), s.querySelector('.rm-legend'), s.querySelector('.rm-g')]; }, t: 'Located, not yet read', b: 'Items in libraries and museums that nobody has read yet. Request email writes a request for you, How to request explains the visit, and Directions & website opens their site.', deep: true },
+    { el: () => { const s = document.querySelector('[data-part="gaps"]'); return s && [s.querySelector('h4'), s.querySelector('li')]; }, t: 'Known gaps', b: 'What the record does not say yet, and what kind of source could fill each gap.', deep: true },
+    { el: () => { const s = document.querySelector('[data-part="search"]'); return s && [s.querySelector('h4'), s.querySelector('ul')]; }, t: 'Search it yourself', b: 'Catalog and newspaper searches with your terms already filled in.', deep: true },
+    { el: () => $('copy'), t: 'Copy', b: 'Copies the story, citations and Research Map as plain text for your notes. That is the tour: ask your first question when you are ready.' },
+  ];
+  window.ST_TOUR = TOUR; // for the page tests
+  let ti = -1, tSteps = [], tRestore = null, tPrevFocus = null;
+  const visible = (x) => x && x.getClientRects().length > 0;
+  const els = (st) => { let v = st.el(); v = (Array.isArray(v) ? v : [v]).filter(visible); return v; };
+  async function startTour() {
+    if (REPLAY) return;
+    closePop(false); tPrevFocus = document.activeElement;
+    if (!state || !state.segs || !state.segs.length) { if (!(await showSample())) return; }
+    tRestore = { deep: $('rmDeep').hidden, more: $('morebar').hidden };
+    $('rmDeep').hidden = false; $('rmMore').setAttribute('aria-expanded', 'true'); $('rmMore').textContent = 'Show fewer';
+    $('morebar').hidden = false;
+    tSteps = TOUR.filter((st) => els(st).length);
+    $('tour').hidden = false; document.addEventListener('keydown', tourKeys, true);
+    showStep(0);
+  }
+  function endTour() {
+    $('tour').hidden = true; document.removeEventListener('keydown', tourKeys, true);
+    if (tRestore) { $('rmDeep').hidden = tRestore.deep; $('rmMore').setAttribute('aria-expanded', String(!tRestore.deep)); $('rmMore').textContent = tRestore.deep ? 'Go deeper' : 'Show fewer'; $('morebar').hidden = tRestore.more; tRestore = null; }
+    ti = -1; if (tPrevFocus && tPrevFocus.focus) tPrevFocus.focus();
+  }
+  function place() {
+    const list = els(tSteps[ti]); if (!list.length) return;
+    const rs = list.map((x) => x.getBoundingClientRect());
+    const pad = 6, vh = innerHeight;
+    let top = Math.min(...rs.map((r) => r.top)) - pad, bottom = Math.max(...rs.map((r) => r.bottom)) + pad;
+    const left = Math.max(4, Math.min(...rs.map((r) => r.left)) - pad), right = Math.min(document.documentElement.clientWidth - 4, Math.max(...rs.map((r) => r.right)) + pad);
+    bottom = Math.min(bottom, top + vh * 0.5);
+    const hl = $('tourHl'); Object.assign(hl.style, { top: top + 'px', left: left + 'px', width: (right - left) + 'px', height: Math.max(0, bottom - top) + 'px' });
+    const card = $('tourCard'), ch = card.offsetHeight;
+    card.style.top = (bottom + 12 + ch < vh ? bottom + 12 : Math.max(12, top - 12 - ch)) + 'px';
+  }
+  function showStep(i) {
+    ti = Math.max(0, Math.min(i, tSteps.length - 1));
+    const st = tSteps[ti], first = els(st)[0];
+    $('tourN').textContent = `Step ${ti + 1} of ${tSteps.length}`; $('tourT').textContent = st.t; $('tourB').textContent = st.b;
+    $('tourBack').disabled = ti === 0; $('tourNext').textContent = ti === tSteps.length - 1 ? 'Done' : 'Next';
+    const r = first.getBoundingClientRect();
+    if (r.top < 70 || r.bottom > innerHeight * 0.45) scrollTo({ top: scrollY + r.top - Math.min(110, innerHeight * 0.15), behavior: 'instant' });
+    requestAnimationFrame(() => { place(); $('tourNext').focus(); });
+  }
+  function tourKeys(e) {
+    if ($('tour').hidden) return;
+    if (e.key === 'Escape') { e.preventDefault(); endTour(); }
+    else if (e.key === 'ArrowRight') { e.preventDefault(); ti < tSteps.length - 1 ? showStep(ti + 1) : endTour(); }
+    else if (e.key === 'ArrowLeft') { e.preventDefault(); showStep(ti - 1); }
+    else if (e.key === 'Tab') { const f = [...$('tourCard').querySelectorAll('button:not([disabled])')]; const k = f.indexOf(document.activeElement); e.preventDefault(); f[(k + (e.shiftKey ? f.length - 1 : 1)) % f.length].focus(); }
+  }
+  $('tourNext').onclick = () => (ti < tSteps.length - 1 ? showStep(ti + 1) : endTour());
+  $('tourBack').onclick = () => showStep(ti - 1);
+  $('tourSkip').onclick = endTour;
+  addEventListener('resize', () => { if (!$('tour').hidden) place(); });
+  addEventListener('scroll', () => { if (!$('tour').hidden) place(); }, { passive: true });
+  window.ST_TEST = { startTour, endTour, showSample, closeSample, openPrimer, steps: () => tSteps, step: () => ti };
+
+  if (!document.getElementById('app').hidden) window.MVST_START();
   function setStatus(t, err) { $('status').textContent = t; $('status').classList.toggle('err', !!err); }
 })();
 </script>
