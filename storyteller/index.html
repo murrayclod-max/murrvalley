@@ -473,7 +473,7 @@ window.MV_SITE = { base: 'https://tennis.murrvalley.com', topic: 'the history of
     const refs = (s.refs || []).filter((r) => r.label || r.url).slice(0, 6);
     const origs = refs.map((r) => { const u = safeUrl(r.url); return u ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(r.label || u)}</a>` : esc(r.label); }).join(' · ');
     const u = safeUrl(s.url);
-    const q = (quotes || []).slice(0, 2).map((x) => `“${esc(x.length > 220 ? x.slice(0, 220) + '…' : x)}”`).join(' ');
+    const q = (quotes || []).slice(0, 2).map((x) => `“${esc(((w) => (w.length > 20 ? w.slice(0, 20).join(' ') + '…' : w.join(' ')))(String(x).split(/\s+/)))}”`).join(' ');
     return `<li id="src-${dn}"><span class="n">${dn}.</span><div><div class="tt">${u ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(s.title)}</a>` : esc(s.title)}</div>
       <div class="m">${esc(s.clubName)} · ${esc({ page: 'published page', excerpt: 'source excerpt', newspaper: 'newspaper article', original: 'original source', notes: 'research notes' }[s.kind] || s.kind)}${s.vis === 'licensed-summary' ? ' · includes licensed items (summaries only)' : ''}</div>
       ${origs ? `<div class="orig">Original sources: ${origs}</div>` : ''}${q ? `<div class="q">Cited text: ${q}</div>` : ''}</div></li>`;
